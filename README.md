@@ -29,7 +29,7 @@ This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, lo
 | `project-disney.jpg` | Cover: Disney drinkware |
 | `project-dodo-pizza-uk.jpg` | Cover: Dodo Pizza UK |
 | `project-presentations.webp` | Cover: Presentation & Pitch Decks |
-| `portfolio.html` | Copy of `index.html` for the Claude preview only. Not uploaded to GitHub. |
+| `portfolio.html` | Copy of `index.html` for the Claude preview only. Local file, listed in `.gitignore` so it never goes to GitHub. |
 
 `portfolio.html` is `index.html` without the page wrapper lines (`<!doctype>`, `<html>`, `<head>`, `<meta charset>`, `<meta viewport>`, `</head>`, `<body>`, `</body>`, `</html>`), because the Claude preview adds its own. Edit `index.html`, then regenerate `portfolio.html` from it only if the preview needs updating.
 
