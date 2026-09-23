@@ -11,11 +11,12 @@ Plain HTML + CSS + a few lines of JS. No framework, no build step: open `index.h
 
 | What | Where |
 |---|---|
-| Local files | `/Users/julia_artemova/artemova-portfolio` |
+| Local files | `~/artemova-portfolio` (git clone of the repo) |
+| GitHub repo | https://github.com/juliya1196-dev/artemova-portfolio (branch `main`) |
 | Claude preview (private) | https://claude.ai/artifact/SLw4XN7WY7JYgnxHEEiDw2 |
-| Live site | GitHub Pages, uploaded by hand through the github.com website. URL: _add once live_ |
+| Live site | https://juliya1196-dev.github.io/artemova-portfolio/ (GitHub Pages, deploys automatically from `main` a minute or two after each push) |
 
-This Mac has no git, GitHub CLI or Homebrew (Apple's Command Line Tools aren't installed), so updates go to GitHub by re-uploading changed files on github.com.
+This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, logged in as `juliya1196-dev`). Updates go to GitHub with `git commit` + `git push`; no more uploading files by hand. Commits use the GitHub no-reply email so Julia's address stays out of the public history.
 
 ## Files
 
@@ -72,8 +73,8 @@ Sections slide up and fade in as they scroll into view (`data-reveal` on each `<
 - [ ] Case-study pages for Disney, Dodo Pizza UK and Presentations. Copy the pattern of `projects/starbucks-peanuts.html` and turn the tile into a link with `target="_blank"`.
 - [ ] Karsten International (current employer, packaging) was dropped from the grid when Presentations took its slot. Possible project to bring back.
 - [ ] Higher-resolution portrait.
-- [ ] Add the live GitHub Pages URL here.
-- [ ] Optional: install git and GitHub CLI so Claude can push updates directly.
+- [x] Add the live GitHub Pages URL here.
+- [x] Install git, Homebrew and GitHub CLI so Claude can push updates directly.
 
 ## Contact details used on the site
 
