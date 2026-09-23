@@ -15,6 +15,7 @@ Plain HTML + CSS + a few lines of JS. No framework, no build step: open `index.h
 | GitHub repo | https://github.com/juliya1196-dev/artemova-portfolio (branch `main`) |
 | Claude preview (private) | https://claude.ai/artifact/SLw4XN7WY7JYgnxHEEiDw2 |
 | Live site | https://juliya1196-dev.github.io/artemova-portfolio/ (GitHub Pages, deploys automatically from `main` a minute or two after each push) |
+| Local preview | http://localhost:8000 — `python3 -m http.server 8000` in the project folder, or the `site` entry in `.claude/launch.json` for Claude's browser pane |
 
 This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, logged in as `juliya1196-dev`). Updates go to GitHub with `git commit` + `git push`; no more uploading files by hand. Commits use the GitHub no-reply email so Julia's address stays out of the public history.
 
