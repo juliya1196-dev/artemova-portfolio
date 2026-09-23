@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Starbucks × Peanuts — Julia Artemova</title>
+<meta name="description" content="Case study: the Starbucks and Peanuts global collaboration, by Julia Artemova." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,440;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #121010;
+    --paper-alt: #1B1817;
+    --card: #191614;
+    --ink: #F5EFE3;
+    --ink-soft: #C7BFAE;
+    --ink-faint: #8A8271;
+    --accent: #FF6B3D;
+    --accent-ink: #1A1108;
+    --line: rgba(245,239,227,0.14);
+    --line-strong: rgba(245,239,227,0.36);
+
+    --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+    --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+    --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  img { max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 980px; margin-inline: auto; padding-inline: clamp(18px, 5vw, 48px); }
+  p { line-height: 1.65; margin: 0; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 440; margin: 0; text-wrap: balance; }
+  .accent { color: var(--accent); font-style: italic; }
+
+  .backbar { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--line); }
+  .backlink {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em;
+    color: var(--ink-soft); text-decoration: none; padding-block: 16px;
+  }
+  .backlink:hover { color: var(--ink); }
+
+  .eyebrow {
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--ink-soft);
+  }
+
+  .hero { padding-block: clamp(40px, 7vw, 72px) clamp(28px, 5vw, 40px); }
+  .hero h1 { font-size: clamp(2.4rem, 1.9rem + 3.2vw, 4rem); line-height: 1.05; margin-top: 14px; }
+  .hero-sub { margin-top: 14px; font-size: 1.1rem; color: var(--ink-soft); max-width: 44ch; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .chip {
+    font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
+    border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; color: var(--ink-soft);
+  }
+
+  .cover { width: 100%; border-radius: 18px; border: 1px solid var(--line); display: block; }
+
+  .proj-body { padding-block: clamp(44px, 7vw, 72px); display: grid; grid-template-columns: 1.5fr 1fr; gap: 56px; border-top: 1px solid var(--line); margin-top: clamp(36px, 6vw, 56px); }
+  @media (max-width: 780px) { .proj-body { grid-template-columns: 1fr; gap: 40px; } }
+  .proj-main h2 { font-size: 1.5rem; margin-bottom: 14px; }
+  .proj-main h2 + p, .proj-main p + h2 { }
+  .proj-main .block + .block { margin-top: 34px; }
+  .proj-main p { color: var(--ink-soft); max-width: 62ch; }
+  .drink-list { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+  .drink-list li { border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; background: var(--card); }
+  .drink-list strong { font-family: var(--font-display); font-size: 1.05rem; font-weight: 500; display: block; margin-bottom: 6px; }
+  .drink-list span { color: var(--ink-soft); font-size: 0.92rem; }
+
+  .facts { border: 1px solid var(--line); border-radius: 16px; padding: 24px; background: var(--card); height: fit-content; }
+  .facts h3 { font-size: 0.78rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); font-weight: 500; margin-bottom: 18px; }
+  .facts dl { margin: 0; display: flex; flex-direction: column; gap: 16px; }
+  .facts .fact + .fact { padding-top: 16px; border-top: 1px solid var(--line); }
+  .facts dt { font-family: var(--font-mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin: 0; }
+  .facts dd { margin: 4px 0 0; font-size: 0.95rem; color: var(--ink); }
+
+  .regions { padding-block: clamp(44px, 7vw, 72px); border-top: 1px solid var(--line); }
+  .regions h2 { font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem); margin-bottom: 30px; }
+  .region-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 860px) { .region-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .region-grid { grid-template-columns: 1fr; } }
+  .region-card { border: 1px solid var(--line); border-radius: 14px; padding: 20px; background: var(--card); }
+  .region-card h3 { font-size: 1.02rem; margin-bottom: 8px; }
+  .region-card p { color: var(--ink-soft); font-size: 0.88rem; }
+
+  footer { border-top: 1px solid var(--line); padding-block: 28px; margin-top: 8px; }
+  .foot-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); }
+  .foot-row a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; }
+  .foot-row a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+
+  <div class="backbar">
+    <div class="wrap">
+      <a class="backlink" href="../">&larr; Back to Portfolio</a>
+    </div>
+  </div>
+
+  <header class="hero wrap">
+    <span class="eyebrow">Case Study — Global Collaboration</span>
+    <h1>Starbucks <span class="accent">&times;</span> Peanuts</h1>
+    <p class="hero-sub">Kindness, community and coffee — a Starbucks-exclusive collaboration with Peanuts, rolled out across Starbucks markets worldwide.</p>
+    <div class="meta-row">
+      <span class="chip">March 2025</span>
+      <span class="chip">73 of 88 Markets</span>
+      <span class="chip">TMS · Starbucks Global Account</span>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <img class="cover" src="../project-starbucks-peanuts.webp" alt="Starbucks and Peanuts collaboration drinkware: a Joe Kind Snoopy cold cup, tumbler, and a Peanuts gang mug" />
+  </div>
+
+  <div class="wrap proj-body">
+    <div class="proj-main">
+      <div class="block">
+        <h2>Overview</h2>
+        <p>In March 2025, Starbucks and Peanuts launched a global brand partnership built on a simple idea: small acts of kindness ripple outward. The collaboration introduced Joe Kind Snoopy — a Starbucks-exclusive take on the classic Peanuts character — across an exclusive line of merchandise, food and beverages, rolling out to stores across more than 70 countries. The launch was timed to Starbucks' annual Global Month of Good, pairing a playful visual identity with real community-impact programs, including meal donations tied to partner volunteer hours.</p>
+      </div>
+      <div class="block">
+        <h2>My Role</h2>
+        <p>As part of the Starbucks Global Account team at TMS, I worked on seasonal merchandise collections and global brand collaborations like this one — turning concept art into production-ready product branding, packaging and presentation files for rollout across EMEA, APAC and the Americas.</p>
+      </div>
+      <div class="block">
+        <h2>Featured Drinks</h2>
+        <ul class="drink-list">
+          <li>
+            <strong>Joe Kind Snoopy Oatmilk Chocolate &amp; Cream Frappuccino</strong>
+            <span>Vanilla syrup and chocolate chips blended with chocolate and caramel sauces, topped with whipped cream, chocolate sauce and a Joe Kind Snoopy chocolate topper.</span>
+          </li>
+          <li>
+            <strong>Joe Kind Snoopy Oatmilk Chocolate &amp; Caramel Latte</strong>
+            <span>Espresso with a drizzle of caramel and chocolate sauces, steamed or iced, finished with whipped cream and the same chocolate topper.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <aside class="facts">
+      <h3>Key Facts</h3>
+      <dl>
+        <div class="fact"><dt>Launch</dt><dd>March 25, 2025</dd></div>
+        <div class="fact"><dt>Merchandise Reach</dt><dd>73 of 88 markets</dd></div>
+        <div class="fact"><dt>Beverage Reach</dt><dd>40 markets</dd></div>
+        <div class="fact"><dt>Beverages Developed In</dt><dd>Japan</dd></div>
+        <div class="fact"><dt>Merchandise Designed In</dt><dd>Hong Kong</dd></div>
+        <div class="fact"><dt>Tied To</dt><dd>Starbucks Global Month of Good — a 15+ year tradition</dd></div>
+        <div class="fact"><dt>Community Impact</dt><dd>100 meals donated per partner volunteer hour in April, via The Global FoodBanking Network</dd></div>
+      </dl>
+    </aside>
+  </div>
+
+  <section class="regions wrap">
+    <h2>Around the World</h2>
+    <div class="region-grid">
+      <div class="region-card">
+        <h3>Europe, Middle East &amp; Africa</h3>
+        <p>4,700+ stores across 39 markets, with an exclusive reusable Joe Kind Snoopy cup, new Frappuccino flavors, and a "Snoopy in Style" pop-up exhibit in Paris featuring a limited-edition Charlie Brownie.</p>
+      </div>
+      <div class="region-card">
+        <h3>China</h3>
+        <p>Immersive pop-up stores with 3D characters and Peanuts comics, plus a Joe Kind Snoopy ceramic mug and doghouse tote bag.</p>
+      </div>
+      <div class="region-card">
+        <h3>Latin America &amp; Caribbean</h3>
+        <p>Limited-edition merchandise and food across select countries, including signature Peanuts character cookies and collectible gift cards.</p>
+      </div>
+      <div class="region-card">
+        <h3>Asia Pacific &amp; Japan</h3>
+        <p>Peanuts-inspired baked goods — Snoopy and Charlie Brown macarons in South Korea, Snoopy sugar donuts and waffles in Japan — plus exclusive merch and animated eGift cards.</p>
+      </div>
+      <div class="region-card">
+        <h3>North America</h3>
+        <p>Mugs, tumblers and cold cups featuring the Peanuts gang, in participating stores across the U.S. and Canada.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <div class="foot-row">
+      <span>Julia Artemova — Senior Graphic &amp; Packaging Designer</span>
+      <span>Source: <a href="https://about.starbucks.com/stories/2025/starbucks-and-peanuts-celebrate-kindness-community-and-coffee-around-the-world/" target="_blank" rel="noopener noreferrer">Starbucks Stories, March 2025</a></span>
+    </div>
+  </footer>
+
+</body>
+</html>
