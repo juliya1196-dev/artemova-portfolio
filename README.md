@@ -25,7 +25,10 @@ This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, lo
 |---|---|
 | `index.html` | **The site.** Source of truth; this is what goes to GitHub. |
 | `projects/starbucks-peanuts.html` | Case-study page for the Starbucks × Peanuts tile (opens in a new tab). |
+| `projects/disney-drinkware.html` | Case-study page for the Disney tile (opens in a new tab). Structure, text and images come from Julia's Notion page; the text is word for word. |
+| `projects/disney/` | The 7 images for the Disney case study, downloaded from that Notion page. Its cover is `project-disney.jpg`. |
 | `julia-photo.png` | Portrait, cropped from the CV PDF (only 280×300; a sharper original would help). |
+| `showreel.mp4` | Hero showreel. 848×480, 14.6 s, 2.9 MB (a Telegram export, so it's soft on big screens). |
 | `project-starbucks-peanuts.webp` | Cover: Starbucks × Peanuts |
 | `project-disney.jpg` | Cover: Disney drinkware |
 | `project-dodo-pizza-uk.jpg` | Cover: Dodo Pizza UK |
@@ -37,10 +40,10 @@ This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, lo
 ## Page structure (top to bottom)
 
 1. **Bottom dock nav**: fixed, centered, white rounded rectangle. Julia's orange logo (SVG inlined), then Projects · About · Contacts · CV. "CV" links to her Notion portfolio.
-2. **Hero** (`#hero`): full screen, empty except a "Showreel — video coming soon" label. Reserved for a background video.
+2. **Hero** (`#hero`): the showreel video at full width, autoplaying, muted and looping. It keeps its own 16:9 shape instead of filling the screen height, because the collage runs to the left and right edges and cropping would cut those images off. Black background to match the video.
 3. **Projects** (`#work`): 2-column grid, 20px side padding and 20px gaps, square corners, no borders. Each tile is a full-bleed image with a dark overlay and the title centered.
    1. Starbucks × Peanuts (Global Collaboration). Links to its case-study page.
-   2. Disney (Drinkware Design)
+   2. Disney (Drinkware Design). Links to its case-study page.
    3. Art Directing Visual Style of Dodo Pizza UK (Art Direction)
    4. Presentation & Pitch Decks Design (Corporate Communications)
    5. BBDO (Automotive Campaign). Placeholder, no cover yet.
@@ -51,7 +54,7 @@ This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, lo
 7. **Contact** (`#contact`): email button, LinkedIn button, location and status, freelance clients note.
 8. **Footer**: © 2026 line.
 
-Sections slide up and fade in as they scroll into view (`data-reveal` on each `<section>` plus an IntersectionObserver), and scrolling snaps gently to section starts. Both switch off for people who have reduced motion turned on.
+Sections slide up and fade in as they scroll into view (`data-reveal` on each `<section>` plus an IntersectionObserver), and scrolling snaps gently to section starts. Both switch off for people who have reduced motion turned on; for them the showreel also starts paused, with play controls.
 
 ## Design system
 
@@ -69,9 +72,11 @@ Sections slide up and fade in as they scroll into view (`data-reveal` on each `<
 
 ## Open to-dos
 
-- [ ] Showreel video for the hero. Use `<video autoplay muted loop playsinline>` in `.video-slot`; compress it or host it externally.
+- [x] Showreel video for the hero.
+- [ ] Sharper showreel. The current file is 848×480, so it gets upscaled about 2× on a laptop. A 1920×1080 H.264 export under ~10 MB would look much better; replace `showreel.mp4` and update `aspect-ratio` in `.hero-video video` if the proportions change.
 - [ ] Covers for BBDO and Skylark Learning.
-- [ ] Case-study pages for Disney, Dodo Pizza UK and Presentations. Copy the pattern of `projects/starbucks-peanuts.html` and turn the tile into a link with `target="_blank"`.
+- [x] Case-study page for Disney (from https://artemovadesign.notion.site/drinkware-design-for-disney).
+- [ ] Case-study pages for Dodo Pizza UK and Presentations. If there's a Notion page for the project, use its structure, text and images the way the Disney page does (`projects/disney-drinkware.html`); turn the tile into a link with `target="_blank"`.
 - [ ] Karsten International (current employer, packaging) was dropped from the grid when Presentations took its slot. Possible project to bring back.
 - [ ] Higher-resolution portrait.
 - [x] Add the live GitHub Pages URL here.

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Drinkware Design for Disney — Julia Artemova</title>
+<meta name="description" content="Case study: collectible Disney drinkware designed for Starbucks by Julia Artemova." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,440;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #121010;
+    --paper-alt: #1B1817;
+    --card: #191614;
+    --ink: #F5EFE3;
+    --ink-soft: #C7BFAE;
+    --ink-faint: #8A8271;
+    --accent: #FF6B3D;
+    --accent-ink: #1A1108;
+    --line: rgba(245,239,227,0.14);
+    --line-strong: rgba(245,239,227,0.36);
+
+    --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+    --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+    --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  img { max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 980px; margin-inline: auto; padding-inline: clamp(18px, 5vw, 48px); }
+  p { line-height: 1.65; margin: 0; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 440; margin: 0; text-wrap: balance; }
+  .accent { color: var(--accent); font-style: italic; }
+
+  .backbar { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--line); }
+  .backlink {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em;
+    color: var(--ink-soft); text-decoration: none; padding-block: 16px;
+  }
+  .backlink:hover { color: var(--ink); }
+
+  .eyebrow {
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--ink-soft);
+  }
+
+  .hero { padding-block: clamp(40px, 7vw, 72px) clamp(28px, 5vw, 40px); }
+  .hero h1 { font-size: clamp(2.4rem, 1.9rem + 3.2vw, 4rem); line-height: 1.05; margin-top: 14px; }
+  .hero-sub { margin-top: 18px; font-size: 1.1rem; color: var(--ink-soft); max-width: 56ch; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .chip {
+    font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
+    border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; color: var(--ink-soft);
+  }
+  .hero-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 34px 0 0; padding-top: 22px; border-top: 1px solid var(--line); }
+  @media (max-width: 640px) { .hero-facts { grid-template-columns: 1fr; gap: 16px; } }
+  .hero-facts dt { font-family: var(--font-mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin: 0; }
+  .hero-facts dd { margin: 5px 0 0; font-size: 0.95rem; color: var(--ink); }
+
+  .shot { width: 100%; height: auto; display: block; border-radius: 18px; border: 1px solid var(--line); }
+  .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  @media (max-width: 560px) { .pair { grid-template-columns: 1fr; } }
+  .pair .shot { aspect-ratio: 1; object-fit: cover; }
+
+  .story { padding-block: clamp(44px, 7vw, 72px) clamp(32px, 5vw, 48px); }
+  .story > * + * { margin-top: clamp(48px, 7vw, 88px); }
+
+  .chapter { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 20px 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+  @media (max-width: 780px) { .chapter { grid-template-columns: 1fr; } }
+  .chapter h2 { font-size: clamp(1.5rem, 1.3rem + 0.8vw, 1.9rem); }
+  .chapter > p { color: var(--ink-soft); max-width: 62ch; }
+
+  .cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  @media (max-width: 560px) { .cards { grid-template-columns: 1fr; } }
+  .cards li { border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; background: var(--card); }
+  .cards strong { font-family: var(--font-display); font-size: 1.05rem; font-weight: 500; display: block; margin-bottom: 8px; }
+  .cards span { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.6; }
+  .cards .num { display: block; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
+
+  .statement p { font-family: var(--font-display); font-weight: 340; font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.7rem); line-height: 1.4; max-width: 38ch; }
+
+  footer { border-top: 1px solid var(--line); padding-block: 28px; margin-top: 8px; }
+  .foot-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); }
+  .foot-row a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; }
+  .foot-row a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+
+  <div class="backbar">
+    <div class="wrap">
+      <a class="backlink" href="../">&larr; Back to Portfolio</a>
+    </div>
+  </div>
+
+  <header class="hero wrap">
+    <span class="eyebrow">Case Study — Drinkware Design</span>
+    <h1>Drinkware Design for <span class="accent">Disney</span></h1>
+    <p class="hero-sub">A series of collectible drinkware items designed for Starbucks in collaboration with Disney, created across multiple seasons and special occasions including Halloween, Christmas, and character-themed campaigns.</p>
+    <div class="meta-row">
+      <span class="chip">Starbucks</span>
+      <span class="chip">Disney</span>
+      <span class="chip">Creative Design</span>
+    </div>
+    <dl class="hero-facts">
+      <div><dt>Client</dt><dd>Starbucks, in collaboration with Disney</dd></div>
+      <div><dt>Occasions</dt><dd>Halloween, Christmas, character-themed campaigns</dd></div>
+      <div><dt>Tools &amp; Resources</dt><dd>Photoshop, Illustrator</dd></div>
+    </dl>
+  </header>
+
+  <div class="wrap">
+    <img class="shot" src="../project-disney.jpg" width="660" height="410" alt="Someone in a Disneyland Halloween sweatshirt holding a textured orange-to-yellow tumbler with a Mickey pumpkin badge" />
+  </div>
+
+  <main class="story wrap">
+
+    <section class="chapter">
+      <h2>Role &amp; Responsibilities</h2>
+      <ul class="cards">
+        <li><strong>Concept Development</strong><span>Interpreted briefs to develop creative concepts that reflect seasonal themes and regional preferences.</span></li>
+        <li><strong>Design Execution</strong><span>Created detailed renderings and mock-ups for a variety of merchandise items, ensuring consistency across product lines.</span></li>
+        <li><strong>Collaboration</strong><span>Worked closely with cross-functional teams, including marketing, production, and external partners like Disney, to ensure designs met all requirements and standards.</span></li>
+        <li><strong>Production Handoff</strong><span>Prepared and delivered comprehensive design files and specifications for manufacturing, facilitating a smooth transition from design to production.</span></li>
+      </ul>
+    </section>
+
+    <img class="shot" src="disney/halloween-candy-corn.jpg" width="660" height="410" loading="lazy" alt="Candy-corn Mickey pumpkin tumblers for Disneyland and Walt Disney World, one styled with autumn flowers and one on a plain background" />
+
+    <div class="statement">
+      <p>Each project required delivering a range of options, from budget-friendly to premium-tier designs, often under tight deadlines. This agile process allowed the client to visualize multiple directions and make quick, informed decisions.</p>
+    </div>
+
+    <div class="pair">
+      <img class="shot" src="disney/nightmare-before-christmas-scene.jpg" width="942" height="942" loading="lazy" alt="The Nightmare Before Christmas tumbler with Santa Jack and Zero, next to pumpkins and a Christmas tree" />
+      <img class="shot" src="disney/nightmare-before-christmas-tumbler.jpg" width="1200" height="1200" loading="lazy" alt="The Nightmare Before Christmas tumbler with a red lid and black straw, product shot" />
+    </div>
+
+    <section class="chapter">
+      <h2>Design Process</h2>
+      <ol class="cards">
+        <li><span class="num">01</span><strong>Research &amp; Inspiration</strong><span>Analyzed market trends, regional cultural elements, and seasonal motifs to inform design direction.</span></li>
+        <li><span class="num">02</span><strong>Sketching &amp; Prototyping</strong><span>Developed initial sketches and prototypes to explore form, color, and material options.</span></li>
+        <li><span class="num">03</span><strong>Feedback &amp; Refinement</strong><span>Incorporated feedback from stakeholders to refine designs, ensuring alignment with brand identity and market expectations.</span></li>
+        <li><span class="num">04</span><strong>Finalization</strong><span>Completed final designs with detailed specifications, ready for production and distribution.</span></li>
+      </ol>
+    </section>
+
+    <div class="pair">
+      <img class="shot" src="disney/christmas-lights-tumbler.jpg" width="912" height="918" loading="lazy" alt="Green Disney Parks holiday tumbler with gold and red Mickey ornaments, standing on a snowy tree stump" />
+      <img class="shot" src="disney/holiday-stamps-bottle.jpg" width="1200" height="1200" loading="lazy" alt="Cream Walt Disney World water bottle covered in holiday postage-stamp illustrations, front and back" />
+    </div>
+
+    <div class="statement">
+      <p>My role focused on developing concepts, creating original graphics, and producing 3D mockups for internal and client presentations. Working with strict Disney brand guidelines, I balanced creative freedom with precision—adapting their assets while maintaining visual consistency and storytelling across each collection.</p>
+    </div>
+
+    <img class="shot" src="disney/tinker-bell-tumblers.jpg" width="1280" height="740" loading="lazy" alt="Pale green Tinker Bell cold cups for Disneyland and Starbucks with gold sparkles, next to Tinker Bell" />
+
+    <section class="chapter">
+      <h2>Outcome</h2>
+      <p>The merchandise collections were successfully launched across multiple regions, receiving positive feedback for their cultural relevance and design quality. Collaborations with local artists added a unique dimension to the product lines, enhancing brand appeal and customer engagement.</p>
+    </section>
+
+    <img class="shot" src="disney/gingerbread-tumbler.jpg" width="1200" height="1200" loading="lazy" alt="Someone in a gingerbread sweatshirt holding a gingerbread Mickey tumbler with a candy-cane straw" />
+
+  </main>
+
+  <footer class="wrap">
+    <div class="foot-row">
+      <span>Julia Artemova — Senior Graphic &amp; Packaging Designer</span>
+      <span>Also on <a href="https://artemovadesign.notion.site/drinkware-design-for-disney" target="_blank" rel="noopener noreferrer">Notion</a></span>
+    </div>
+  </footer>
+
+</body>
+</html>
