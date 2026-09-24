@@ -88,6 +88,7 @@ Sections slide up and fade in as they scroll into view (`data-reveal` on each `<
 - [x] Case-study page for Disney (from https://artemovadesign.notion.site/drinkware-design-for-disney).
 - [x] Case-study page for Dodo Pizza UK (from https://artemovadesign.notion.site/Menu-in-store-design-21cc11c9549080b9bd7aff9dcd459826).
 - [x] Case-study page for Presentations (from https://artemovadesign.notion.site/presentation-design).
+- [ ] Presentations page, waiting on Julia: (1) the Notion title says "Pitch Desks"; the site uses "Pitch Decks" to match the tile. (2) Notion numbers the steps 1, 2, 3, 5 (no 4); the site keeps 01, 02, 03, 05. Renumber, or is a step 4 coming?
 - [ ] Karsten International (current employer, packaging) was dropped from the grid when Presentations took its slot. Possible project to bring back.
 - [ ] Higher-resolution portrait.
 - [x] Add the live GitHub Pages URL here.
