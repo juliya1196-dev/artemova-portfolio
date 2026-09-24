@@ -26,9 +26,12 @@ This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, lo
 | `index.html` | **The site.** Source of truth; this is what goes to GitHub. |
 | `projects/starbucks-peanuts.html` | Case-study page for the Starbucks × Peanuts tile (opens in a new tab). |
 | `projects/disney-drinkware.html` | Case-study page for the Disney tile (opens in a new tab). Structure, text and images come from Julia's Notion page; the text is word for word. |
+| `projects/dodo-pizza-uk.html` | Case-study page for the Dodo Pizza UK tile (opens in a new tab). Built from Julia's Notion page the same way as Disney, but with no Notion link at the end (Julia's request). |
+| `projects/dodo-pizza-uk/` | The 8 images for the Dodo Pizza UK case study, from that Notion page. Its cover is `project-dodo-pizza-uk.jpg`. |
 | `projects/disney/` | The 7 images for the Disney case study, downloaded from that Notion page. Its cover is `project-disney.jpg`. |
 | `julia-photo.png` | Portrait, cropped from the CV PDF (only 280×300; a sharper original would help). |
-| `showreel.mp4` | Hero showreel. 848×480, 14.6 s, 2.9 MB (a Telegram export, so it's soft on big screens). |
+| `showreel.mp4` | Hero showreel for screens wider than 700px. 1920×1080, 14.7 s, 15.4 MB, H.264 (Julia's "Comp 3.mp4", re-encoded with macOS `avconvert -p Preset1920x1080` from 27.7 MB). |
+| `showreel-small.mp4` | Same showreel for phones (≤700px): the earlier 848×480, 2.9 MB Telegram export. |
 | `project-starbucks-peanuts.webp` | Cover: Starbucks × Peanuts |
 | `project-disney.jpg` | Cover: Disney drinkware |
 | `project-dodo-pizza-uk.jpg` | Cover: Dodo Pizza UK |
@@ -39,12 +42,13 @@ This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, lo
 
 ## Page structure (top to bottom)
 
+0. **Loader**: full-screen dark overlay with Julia's orange "art" logo rising letter by letter, a thin orange progress line and a percentage. It waits for the fonts and the first 4 seconds of the showreel (at least 1.3 s so the animation plays, at most 6 s), then slides up like a curtain and the showreel starts from the beginning. With reduced motion it simply fades. It only exists when JavaScript runs (`html.js`), and a timer lifts it even in a background tab.
 1. **Bottom dock nav**: fixed, centered, white rounded rectangle. Julia's orange logo (SVG inlined), then Projects · About · Contacts · CV. "CV" links to her Notion portfolio.
-2. **Hero** (`#hero`): the showreel video at full width, autoplaying, muted and looping. It keeps its own 16:9 shape instead of filling the screen height, because the collage runs to the left and right edges and cropping would cut those images off. Black background to match the video.
+2. **Hero** (`#hero`): the showreel video at full width (`showreel-small.mp4` on phones, `showreel.mp4` elsewhere, picked by `<source media>`), autoplaying, muted and looping. It keeps its own 16:9 shape instead of filling the screen height, because the collage runs to the left and right edges and cropping would cut those images off. Black background to match the video.
 3. **Projects** (`#work`): 2-column grid, 20px side padding and 20px gaps, square corners, no borders. Each tile is a full-bleed image with a dark overlay and the title centered.
    1. Starbucks × Peanuts (Global Collaboration). Links to its case-study page.
    2. Disney (Drinkware Design). Links to its case-study page.
-   3. Art Directing Visual Style of Dodo Pizza UK (Art Direction)
+   3. Art Directing Visual Style of Dodo Pizza UK (Art Direction). Links to its case-study page.
    4. Presentation & Pitch Decks Design (Corporate Communications)
    5. BBDO (Automotive Campaign). Placeholder, no cover yet.
    6. Skylark Learning (Digital Product Design). Placeholder, no cover yet.
@@ -73,10 +77,12 @@ Sections slide up and fade in as they scroll into view (`data-reveal` on each `<
 ## Open to-dos
 
 - [x] Showreel video for the hero.
-- [ ] Sharper showreel. The current file is 848×480, so it gets upscaled about 2× on a laptop. A 1920×1080 H.264 export under ~10 MB would look much better; replace `showreel.mp4` and update `aspect-ratio` in `.hero-video video` if the proportions change.
+- [x] Sharper showreel (1920×1080).
+- [ ] Lighter showreel. `showreel.mp4` is 15.4 MB because macOS's built-in encoder can't go smaller at 1080p. ffmpeg (`brew install ffmpeg`, Julia said no for now) would get it to about 3–5 MB: `ffmpeg -i "Comp 3.mp4" -c:v libx264 -crf 24 -preset slow -pix_fmt yuv420p -movflags +faststart -an showreel.mp4`.
 - [ ] Covers for BBDO and Skylark Learning.
 - [x] Case-study page for Disney (from https://artemovadesign.notion.site/drinkware-design-for-disney).
-- [ ] Case-study pages for Dodo Pizza UK and Presentations. If there's a Notion page for the project, use its structure, text and images the way the Disney page does (`projects/disney-drinkware.html`); turn the tile into a link with `target="_blank"`.
+- [x] Case-study page for Dodo Pizza UK (from https://artemovadesign.notion.site/Menu-in-store-design-21cc11c9549080b9bd7aff9dcd459826).
+- [ ] Case-study page for Presentations. If there's a Notion page for the project, use its structure, text and images the way the Disney page does (`projects/disney-drinkware.html`); turn the tile into a link with `target="_blank"`.
 - [ ] Karsten International (current employer, packaging) was dropped from the grid when Presentations took its slot. Possible project to bring back.
 - [ ] Higher-resolution portrait.
 - [x] Add the live GitHub Pages URL here.
