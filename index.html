@@ -144,6 +144,30 @@
     .dock-logo svg { height: 18px; }
   }
 
+  /* ---------- back to top ---------- */
+  .to-top {
+    position: fixed;
+    top: calc(18px + env(safe-area-inset-top, 0px));
+    left: calc(18px + env(safe-area-inset-left, 0px));
+    z-index: 60;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px 10px 12px;
+    border-radius: 14px;
+    background: var(--dock-bg);
+    color: var(--dock-text);
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.06em;
+    text-decoration: none;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.25);
+    opacity: 0; visibility: hidden; transform: translateY(-12px);
+    transition: opacity .3s ease, transform .3s ease, visibility 0s linear .3s;
+  }
+  .to-top.is-shown { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+  .to-top svg { width: 14px; height: 14px; flex: none; transition: transform .2s ease; }
+  .to-top:hover svg, .to-top:focus-visible svg { transform: translateY(-2px); }
+  @media (prefers-reduced-motion: reduce) {
+    .to-top, .to-top:hover svg, .to-top:focus-visible svg { transform: none; }
+  }
+
   /* ---------- hero video ---------- */
   .hero-video {
     padding: 0;
@@ -339,6 +363,11 @@
   <div class="dock-sep"></div>
   <a class="dock-link dock-cv" href="https://artemovadesign.notion.site/portfolio" target="_blank" rel="noopener noreferrer">CV</a>
 </nav>
+
+<a class="to-top" href="#top">
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"/></svg>
+  Back to top
+</a>
 
 <main id="top">
 
@@ -553,10 +582,31 @@
 
     var reel = document.querySelector('.hero-video video');
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // "Back to top" appears once the visitor has scrolled past the first two screens.
+    var toTop = document.querySelector('.to-top');
+    if (toTop) {
+      var updateToTop = function () {
+        toTop.classList.toggle('is-shown', window.scrollY > window.innerHeight * 2);
+      };
+      window.addEventListener('scroll', updateToTop, { passive: true });
+      window.addEventListener('resize', updateToTop);
+      updateToTop();
+    }
+
     if (reel && reduceMotion) {
       reel.pause();
       reel.controls = true;
     }
+    function playReel() {
+      if (!reel || reduceMotion) return;
+      var p = reel.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+    // Browsers pause the video in background tabs and don't always resume it.
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden && reel && reel.paused) playReel();
+    });
 
     // Loader: waits for the fonts and the first few seconds of the showreel,
     // never shows for less than MIN_MS (so the logo animation can finish) or more than MAX_MS.
@@ -584,8 +634,7 @@
       document.documentElement.classList.remove('is-loading');
       if (reel && !reduceMotion) {
         try { reel.currentTime = 0; } catch (e) {}
-        var p = reel.play();
-        if (p && p.catch) p.catch(function () {});
+        playReel();
       }
       setTimeout(function () { loader.remove(); }, 1600);
     }
