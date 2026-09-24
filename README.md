@@ -25,8 +25,8 @@ This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, lo
 |---|---|
 | `index.html` | **The site.** Source of truth; this is what goes to GitHub. |
 | `projects/starbucks-peanuts.html` | Case-study page for the Starbucks × Peanuts tile (opens in a new tab). |
-| `projects/disney-drinkware.html` | Case-study page for the Disney tile (opens in a new tab). Structure, text and images come from Julia's Notion page; the text is word for word. |
-| `projects/dodo-pizza-uk.html` | Case-study page for the Dodo Pizza UK tile (opens in a new tab). Built from Julia's Notion page the same way as Disney, but with no Notion link at the end (Julia's request). |
+| `projects/disney-drinkware.html` | Case-study page for the Disney tile (opens in a new tab). Structure, text and images come from Julia's Notion page; the text is word for word. No link back to Notion on case-study pages (Julia's request). |
+| `projects/dodo-pizza-uk.html` | Case-study page for the Dodo Pizza UK tile (opens in a new tab). Built from Julia's Notion page the same way as Disney. |
 | `projects/dodo-pizza-uk/` | The 8 images for the Dodo Pizza UK case study, from that Notion page. Its cover is `project-dodo-pizza-uk.jpg`. |
 | `projects/disney/` | The 7 images for the Disney case study, downloaded from that Notion page. Its cover is `project-disney.jpg`. |
 | `julia-photo.png` | Portrait, cropped from the CV PDF (only 280×300; a sharper original would help). |
