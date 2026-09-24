@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Presentation Design / Pitch Decks — Julia Artemova</title>
+<meta name="description" content="Case study: stage presentations and pitch decks by Julia Artemova, from the discovery call with the speaker to animation." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,440;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #121010;
+    --paper-alt: #1B1817;
+    --card: #191614;
+    --ink: #F5EFE3;
+    --ink-soft: #C7BFAE;
+    --ink-faint: #8A8271;
+    --accent: #FF6B3D;
+    --accent-ink: #1A1108;
+    --line: rgba(245,239,227,0.14);
+    --line-strong: rgba(245,239,227,0.36);
+
+    --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+    --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+    --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  img { max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 980px; margin-inline: auto; padding-inline: clamp(18px, 5vw, 48px); }
+  p { line-height: 1.65; margin: 0; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 440; margin: 0; text-wrap: balance; }
+  .accent { color: var(--accent); font-style: italic; }
+
+  .backbar { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--line); }
+  .backlink {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em;
+    color: var(--ink-soft); text-decoration: none; padding-block: 16px;
+  }
+  .backlink:hover { color: var(--ink); }
+
+  .eyebrow {
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--ink-soft);
+  }
+
+  .hero { padding-block: clamp(40px, 7vw, 72px) clamp(28px, 5vw, 40px); }
+  .hero h1 { font-size: clamp(2.4rem, 1.9rem + 3.2vw, 4rem); line-height: 1.05; margin-top: 14px; }
+  .hero-sub { margin-top: 18px; font-size: 1.1rem; color: var(--ink-soft); max-width: 60ch; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .chip {
+    font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
+    border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; color: var(--ink-soft);
+  }
+  .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 34px 0 0; padding-top: 22px; border-top: 1px solid var(--line); }
+  @media (max-width: 640px) { .facts { grid-template-columns: 1fr; gap: 16px; } }
+  .facts dt { font-family: var(--font-mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin: 0; }
+  .facts dd { margin: 5px 0 0; font-size: 0.95rem; color: var(--ink); }
+
+  .shot { width: 100%; height: auto; display: block; border-radius: 18px; border: 1px solid var(--line); background: #000; }
+  video.shot { aspect-ratio: 1080 / 608; object-fit: cover; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  @media (max-width: 560px) { .grid2 { grid-template-columns: 1fr; } }
+  .grid2 .shot { border-radius: 14px; }
+  .embed { width: 100%; aspect-ratio: 16 / 9; display: block; border: 1px solid var(--line); border-radius: 18px; background: #000; }
+
+  .story { padding-block: clamp(44px, 7vw, 72px) clamp(32px, 5vw, 48px); }
+  .story > * + * { margin-top: clamp(48px, 7vw, 88px); }
+  .section-title { font-size: clamp(1.9rem, 1.5rem + 1.6vw, 2.7rem); }
+  .story > .section-title + * { margin-top: clamp(28px, 4vw, 40px); }
+
+  .chapter { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 20px 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+  @media (max-width: 780px) { .chapter { grid-template-columns: 1fr; } }
+  .chapter h3 { font-size: clamp(1.35rem, 1.2rem + 0.6vw, 1.7rem); }
+  .chapter .num { display: block; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
+  .chapter-body > * + * { margin-top: 18px; }
+  .chapter-body p { color: var(--ink-soft); max-width: 62ch; }
+  .focus { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .focus li { border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; background: var(--card); color: var(--ink-soft); font-size: 0.95rem; line-height: 1.6; }
+  .focus strong { color: var(--ink); font-weight: 600; }
+
+  .project { margin: 0; display: grid; gap: 18px; }
+  .project figcaption { padding-top: 16px; border-top: 1px solid var(--line); font-family: var(--font-display); font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem); color: var(--ink); }
+
+  footer { border-top: 1px solid var(--line); padding-block: 28px; margin-top: 8px; }
+  .foot-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); }
+</style>
+</head>
+<body>
+
+  <div class="backbar">
+    <div class="wrap">
+      <a class="backlink" href="../">&larr; Back to Portfolio</a>
+    </div>
+  </div>
+
+  <header class="hero wrap">
+    <span class="eyebrow">Case Study — Corporate Communications</span>
+    <h1>Presentation design <span class="accent">/</span> Pitch Decks</h1>
+    <p class="hero-sub">This process reflects a full-cycle approach to presentation design — from understanding the speaker's intent to the final on-stage delivery. Ensuring every visual and motion decision serves the story being told.</p>
+    <div class="meta-row">
+      <span class="chip">Presentation</span>
+    </div>
+    <dl class="facts">
+      <div><dt>Tools &amp; Resources</dt><dd>Keynote, Figma</dd></div>
+    </dl>
+  </header>
+
+  <div class="wrap">
+    <img class="shot" src="../project-presentations.webp" width="1561" height="1008" alt="Speaker on stage in front of a slide titled Quality Assessment System, with a red timeline from 2019 to 2025" />
+  </div>
+
+  <main class="story wrap">
+
+    <h2 class="section-title">How I Work as a Presentation Designer</h2>
+
+    <section class="chapter">
+      <div><span class="num">01</span><h3>Discovery Call with the Speaker</h3></div>
+      <div class="chapter-body">
+        <p>Every project begins with a conversation, not a template. Before opening any design software, I schedule a call directly with the speaker to understand who they are, what they're trying to communicate, and how they want to be perceived on stage.</p>
+        <p>During this call, I focus on:</p>
+        <ul class="focus">
+          <li><strong>Understanding the general vibe</strong> — is the tone corporate and authoritative, energetic and inspiring, casual and conversational, or something in between?</li>
+          <li><strong>Identifying the narrative accents</strong> — which moments in the talk matter most? Where should the audience's attention peak, and where can the pacing relax?</li>
+          <li><strong>Clarifying context and audience</strong> — who is in the room, what do they already know, and what does the speaker want them to walk away remembering?</li>
+        </ul>
+        <p>This step ensures the presentation is built around the speaker's voice and intent from the very first slide.</p>
+      </div>
+    </section>
+
+    <figure class="project">
+      <div class="grid2">
+        <video class="shot" data-src="presentations/dodo-congress-2026-anim-1.mp4" poster="presentations/dodo-congress-2026-anim-1.jpg" width="1080" height="608" muted loop playsinline preload="none" aria-label="Animated line chart: number of Dodo Pizza locations in Russia compared with other chains, 2020–2026"></video>
+        <video class="shot" data-src="presentations/dodo-congress-2026-anim-3.mp4" poster="presentations/dodo-congress-2026-anim-3.jpg" width="1080" height="608" muted loop playsinline preload="none" aria-label="Animated slide: aerial mountain footage leading into “Why the largest cities?” and three reasons"></video>
+        <video class="shot" data-src="presentations/dodo-congress-2026-anim-2.mp4" poster="presentations/dodo-congress-2026-anim-2.jpg" width="1080" height="608" muted loop playsinline preload="none" aria-label="Animated slide: “The rating system became complex and unclear for employees”, over an iceberg"></video>
+        <video class="shot" data-src="presentations/dodo-congress-2026-anim-4.mp4" poster="presentations/dodo-congress-2026-anim-4.jpg" width="1080" height="608" muted loop playsinline preload="none" aria-label="Animated slide about Dodo Pizza in Moscow: a restaurant photo, a location counter and revenue growth figures"></video>
+      </div>
+      <img class="shot" src="presentations/dodo-congress-2026-stage.jpg" width="1600" height="1034" loading="lazy" alt="Speaker on stage in front of a Teamwork slide comparing the roles of the management company and the partner" />
+      <iframe class="embed" src="https://www.youtube-nocookie.com/embed/Q9ZD5YFrvcw?start=11783&amp;rel=0" title="14th Congress of Dodo Pizza Partners (YouTube)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <figcaption>Presentation design for 14th Congress of Dodo Pizza Partners, July 2026</figcaption>
+    </figure>
+
+    <section class="chapter">
+      <div><span class="num">02</span><h3>Structure &amp; Graphic Style Drafts</h3></div>
+      <div class="chapter-body">
+        <p>With a clear sense of the message, I move to building the narrative architecture of the deck — the logical flow of ideas, the sequencing of arguments, and the placement of key moments identified during the call. This is a content-first stage: the goal is to make sure the story holds together before any visual decisions are made.</p>
+        <p>In parallel with — or immediately following — the structural work, I develop visual style directions: color palette, typography, layout language, and overall aesthetic. These drafts translate the "vibe" from the discovery call into a concrete visual identity for the deck.</p>
+      </div>
+    </section>
+
+    <figure class="project">
+      <img class="shot" src="presentations/drinkit-2025-stage-1.jpg" width="1600" height="865" loading="lazy" alt="Speaker in front of a map slide: 84 coffee shops in Moscow, 2025" />
+      <video class="shot" data-src="presentations/drinkit-2025-keynote.mp4" poster="presentations/drinkit-2025-keynote.jpg" width="1280" height="750" muted loop playsinline preload="none" style="aspect-ratio: 1280 / 750" aria-label="Screen recording scrolling through the slides of the Drinkit partners' congress deck"></video>
+      <img class="shot" src="presentations/drinkit-2025-stage-2.jpg" width="1600" height="1058" loading="lazy" alt="Speaker in front of a results slide: Gingerbread cookie 2024, 14% of revenue" />
+      <figcaption>Presentation design for the Congress of Drinkit Partners, 2025</figcaption>
+    </figure>
+
+    <section class="chapter">
+      <div><span class="num">03</span><h3>Review and Approval</h3></div>
+      <div class="chapter-body">
+        <p>Once both the structure and the graphic style are ready, I present them together for review. This is a collaborative checkpoint: slide order, content flow, and visual direction are discussed and refined until the speaker is fully aligned with the direction. Only after this approval do I proceed to final execution.</p>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <div><span class="num">05</span><h3>Animation</h3></div>
+      <div class="chapter-body">
+        <p>The last stage is animation — and it's treated as a storytelling tool, not decoration. Motion is used to support the natural rhythm of the speech: reinforcing transitions, building anticipation, and drawing the audience's eye to key moments exactly when the speaker delivers them. Well-placed animation keeps attention on the message at the moments that matter most, making the presentation more engaging and memorable for the audience.</p>
+      </div>
+    </section>
+
+    <figure class="project">
+      <img class="shot" src="presentations/summit-2025-title.jpg" width="1600" height="900" loading="lazy" alt="Title slide: Clusters. Plans. Ilia Zomba, Head of IMF. Dodo Pizza International Summit, Izmir 2025" />
+      <div class="grid2">
+        <video class="shot" data-src="presentations/summit-2025-anim-1.mp4" poster="presentations/summit-2025-anim-1.jpg" width="1080" height="608" muted loop playsinline preload="none" aria-label="Animated slide: Sales growth and its key initiatives"></video>
+        <video class="shot" data-src="presentations/summit-2025-anim-3.mp4" poster="presentations/summit-2025-anim-3.jpg" width="1080" height="608" muted loop playsinline preload="none" aria-label="Animated slide: Operational excellence + coverage + time = success"></video>
+        <video class="shot" data-src="presentations/summit-2025-anim-2.mp4" poster="presentations/summit-2025-anim-2.jpg" width="1080" height="608" muted loop playsinline preload="none" aria-label="Animated slide: Profitable unit economics, built up as a pyramid with sales growth and chain growth"></video>
+        <video class="shot" data-src="presentations/summit-2025-anim-4.mp4" poster="presentations/summit-2025-anim-4.jpg" width="1080" height="608" muted loop playsinline preload="none" aria-label="Animated slide: Chain growth and its key initiatives"></video>
+      </div>
+      <img class="shot" src="presentations/summit-2025-stage.jpg" width="1600" height="896" loading="lazy" alt="Speaker at the summit presenting a slide about quality standards for the dough" />
+      <figcaption>Presentation design for Dodo Pizza International Summit, 2025</figcaption>
+    </figure>
+
+    <h2 class="section-title">Pitch Presentation for Alfa Bank</h2>
+
+    <figure class="project">
+      <div class="grid2">
+        <img class="shot" src="presentations/alfa-bank-1.jpg" width="1600" height="900" loading="lazy" alt="Title slide: a concierge service inside a banking app, 2025–2026" />
+        <img class="shot" src="presentations/alfa-bank-3.jpg" width="1600" height="900" loading="lazy" alt="Slide with AI-agent trend figures from a McKinsey study" />
+        <img class="shot" src="presentations/alfa-bank-2.jpg" width="1600" height="900" loading="lazy" alt="Slide on Perplexity and T-Bank launching their own assistants" />
+        <img class="shot" src="presentations/alfa-bank-4.jpg" width="1600" height="900" loading="lazy" alt="Slide: why the bank needs its own lifestyle service" />
+      </div>
+      <img class="shot" src="presentations/alfa-bank-5.jpg" width="1600" height="900" loading="lazy" alt="Slide: why use AI and how, with 70% of requests handled by AI agents" />
+      <div class="grid2">
+        <img class="shot" src="presentations/alfa-bank-6.jpg" width="1600" height="900" loading="lazy" alt="Slide comparing lifestyle concierge services from other brands" />
+        <img class="shot" src="presentations/alfa-bank-7.jpg" width="1600" height="900" loading="lazy" alt="Roadmap slide for the final product, Q4 2026" />
+      </div>
+    </figure>
+
+  </main>
+
+  <footer class="wrap">
+    <div class="foot-row">
+      <span>Julia Artemova — Senior Graphic &amp; Packaging Designer</span>
+    </div>
+  </footer>
+
+<script>
+  // Slide animations load only when they get close to the screen, play while visible and pause off-screen.
+  (function () {
+    var clips = document.querySelectorAll('video[data-src]');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function load(v) { if (!v.getAttribute('src')) v.src = v.dataset.src; }
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      clips.forEach(function (v) { load(v); v.controls = true; });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var v = entry.target;
+        if (entry.isIntersecting) {
+          load(v);
+          var p = v.play();
+          if (p && p.catch) p.catch(function () {});
+        } else if (v.getAttribute('src')) {
+          v.pause();
+        }
+      });
+    }, { rootMargin: '300px 0px' });
+    clips.forEach(function (v) { io.observe(v); });
+  })();
+</script>
+</body>
+</html>

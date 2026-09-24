@@ -28,6 +28,9 @@ This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, lo
 | `projects/disney-drinkware.html` | Case-study page for the Disney tile (opens in a new tab). Structure, text and images come from Julia's Notion page; the text is word for word. No link back to Notion on case-study pages (Julia's request). |
 | `projects/dodo-pizza-uk.html` | Case-study page for the Dodo Pizza UK tile (opens in a new tab). Built from Julia's Notion page the same way as Disney. |
 | `projects/dodo-pizza-uk/` | The 8 images for the Dodo Pizza UK case study, from that Notion page. Its cover is `project-dodo-pizza-uk.jpg`. |
+| `projects/presentations.html` | Case-study page for the Presentations tile (opens in a new tab). Built from Julia's Notion page like the others: the process steps (1, 2, 3, 5 — Notion skips 4) with three event decks in between, then the Alfa Bank pitch. Includes a YouTube embed (youtube-nocookie) of the 14th Dodo Pizza Partners Congress. |
+| `projects/presentations/` | 13 images and 9 slide animations for that page. The animations were GIFs in Notion (47 MB); they're MP4s here (12 MB) with a first-frame `.jpg` poster each. They load only when scrolled near and pause off-screen. Cover is `project-presentations.webp`, which replaces Notion's first (Russian) stage photo. |
+| `tools/gif2mp4.swift` | Converts a GIF to an H.264 MP4 plus a poster JPEG with Apple's built-in frameworks (no ffmpeg needed). Build: `swiftc -O -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk tools/gif2mp4.swift -o /tmp/gif2mp4` (the newest SDK doesn't match this Mac's Swift compiler). Run: `/tmp/gif2mp4 in.gif out.mp4 2500000 poster.jpg`. |
 | `projects/disney/` | The 7 images for the Disney case study, downloaded from that Notion page. Its cover is `project-disney.jpg`. |
 | `julia-photo.png` | Portrait, cropped from the CV PDF (only 280×300; a sharper original would help). |
 | `showreel.mp4` | Hero showreel for screens wider than 700px. 1920×1080, 14.7 s, 15.4 MB, H.264 (Julia's "Comp 3.mp4", re-encoded with macOS `avconvert -p Preset1920x1080` from 27.7 MB). |
@@ -50,7 +53,7 @@ This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, lo
    1. Starbucks × Peanuts (Global Collaboration). Links to its case-study page.
    2. Disney (Drinkware Design). Links to its case-study page.
    3. Art Directing Visual Style of Dodo Pizza UK (Art Direction). Links to its case-study page.
-   4. Presentation & Pitch Decks Design (Corporate Communications)
+   4. Presentation & Pitch Decks Design (Corporate Communications). Links to its case-study page.
    5. BBDO (Automotive Campaign). Placeholder, no cover yet.
    6. Skylark Learning (Digital Product Design). Placeholder, no cover yet.
 4. **About** (`#about`): photo on the left, "9+ Years" and "8+ Core Disciplines" blocks on the right. Below them, "Hi, I'm Julia." and the bio paragraph.
@@ -73,6 +76,7 @@ Sections slide up and fade in as they scroll into view (`data-reveal` on each `<
 - Project tiles have no rounded corners and no outline. The image fills the tile and the name is centered.
 - The bio is Julia's CV intro, word for word. Don't rewrite it.
 - Removed on purpose: hero headline and text, top info strip, scrolling client ticker, "Selected Work" heading, Experience timeline, the "About" label and icon, phone number, and the "Full Portfolio" link in Contact.
+- Case-study pages are built from Julia's Notion pages: same structure and images, text word for word, no link back to Notion. The tile becomes a link with `target="_blank"`.
 - Missing images get an honest placeholder ("Cover coming soon"), never a stand-in picture.
 
 ## Open to-dos
@@ -83,7 +87,7 @@ Sections slide up and fade in as they scroll into view (`data-reveal` on each `<
 - [ ] Covers for BBDO and Skylark Learning.
 - [x] Case-study page for Disney (from https://artemovadesign.notion.site/drinkware-design-for-disney).
 - [x] Case-study page for Dodo Pizza UK (from https://artemovadesign.notion.site/Menu-in-store-design-21cc11c9549080b9bd7aff9dcd459826).
-- [ ] Case-study page for Presentations. If there's a Notion page for the project, use its structure, text and images the way the Disney page does (`projects/disney-drinkware.html`); turn the tile into a link with `target="_blank"`.
+- [x] Case-study page for Presentations (from https://artemovadesign.notion.site/presentation-design).
 - [ ] Karsten International (current employer, packaging) was dropped from the grid when Presentations took its slot. Possible project to bring back.
 - [ ] Higher-resolution portrait.
 - [x] Add the live GitHub Pages URL here.
