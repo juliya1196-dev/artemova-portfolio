@@ -9,22 +9,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,440;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
+  /* This page is light (Julia's request): white background, the site's near-black as text. */
   :root {
-    --paper: #121010;
-    --paper-alt: #1B1817;
-    --card: #191614;
-    --ink: #F5EFE3;
-    --ink-soft: #C7BFAE;
-    --ink-faint: #8A8271;
+    --paper: #FFFFFF;
+    --paper-alt: #F6F3EE;
+    --card: #F6F3EE;
+    --ink: #121010;
+    --ink-soft: #4A4540;
+    --ink-faint: #7A7266;
     --accent: #FF6B3D;
+    --accent-text: #B8390F;
     --accent-ink: #1A1108;
-    --line: rgba(245,239,227,0.14);
-    --line-strong: rgba(245,239,227,0.36);
+    --line: rgba(18,16,16,0.12);
+    --line-strong: rgba(18,16,16,0.32);
 
     --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
     --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
     --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
-    color-scheme: dark;
+    color-scheme: light;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -66,7 +68,7 @@
     border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; color: var(--ink-soft);
   }
 
-  .shot { width: 100%; height: auto; display: block; border-radius: 18px; border: 1px solid var(--line); }
+  .shot { width: 100%; height: auto; display: block; border-radius: 18px; }
   video.shot { aspect-ratio: 1; max-width: 576px; margin-inline: auto; background: #000; }
   .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
   @media (max-width: 560px) { .pair { grid-template-columns: 1fr; } }
@@ -80,7 +82,7 @@
   .chapter { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 20px 48px; padding-top: 28px; border-top: 1px solid var(--line); }
   @media (max-width: 780px) { .chapter { grid-template-columns: 1fr; } }
   .chapter h3 { font-size: clamp(1.35rem, 1.2rem + 0.6vw, 1.7rem); }
-  .chapter .num { display: block; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
+  .chapter .num { display: block; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--accent-text); margin-bottom: 10px; }
   .points { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
   .points li { position: relative; padding-left: 24px; color: var(--ink-soft); line-height: 1.6; max-width: 62ch; }
   .points li::before { content: "—"; position: absolute; left: 0; color: var(--ink-faint); }

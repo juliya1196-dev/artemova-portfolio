@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Starbucks × Peanuts — Julia Artemova</title>
-<meta name="description" content="Case study: the Starbucks and Peanuts global collaboration, by Julia Artemova." />
+<title>Merchandise Design for Starbucks — Julia Artemova</title>
+<meta name="description" content="Case study: seasonal and regional merchandise collections for Starbucks, by Julia Artemova." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,440;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -59,44 +59,51 @@
 
   .hero { padding-block: clamp(40px, 7vw, 72px) clamp(28px, 5vw, 40px); }
   .hero h1 { font-size: clamp(2.4rem, 1.9rem + 3.2vw, 4rem); line-height: 1.05; margin-top: 14px; }
-  .hero-sub { margin-top: 14px; font-size: 1.1rem; color: var(--ink-soft); max-width: 44ch; }
+  .hero-sub { margin-top: 18px; font-size: 1.1rem; color: var(--ink-soft); max-width: 60ch; }
   .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
   .chip {
     font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
     border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; color: var(--ink-soft);
   }
-
-  .cover { width: 100%; border-radius: 18px; border: 1px solid var(--line); display: block; }
-
-  .proj-body { padding-block: clamp(44px, 7vw, 72px); display: grid; grid-template-columns: 1.5fr 1fr; gap: 56px; border-top: 1px solid var(--line); margin-top: clamp(36px, 6vw, 56px); }
-  @media (max-width: 780px) { .proj-body { grid-template-columns: 1fr; gap: 40px; } }
-  .proj-main h2 { font-size: 1.5rem; margin-bottom: 14px; }
-  .proj-main h2 + p, .proj-main p + h2 { }
-  .proj-main .block + .block { margin-top: 34px; }
-  .proj-main p { color: var(--ink-soft); max-width: 62ch; }
-  .drink-list { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
-  .drink-list li { border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; background: var(--card); }
-  .drink-list strong { font-family: var(--font-display); font-size: 1.05rem; font-weight: 500; display: block; margin-bottom: 6px; }
-  .drink-list span { color: var(--ink-soft); font-size: 0.92rem; }
-
-  .facts { border: 1px solid var(--line); border-radius: 16px; padding: 24px; background: var(--card); height: fit-content; }
-  .facts h3 { font-size: 0.78rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); font-weight: 500; margin-bottom: 18px; }
-  .facts dl { margin: 0; display: flex; flex-direction: column; gap: 16px; }
-  .facts .fact + .fact { padding-top: 16px; border-top: 1px solid var(--line); }
+  .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 34px 0 0; padding-top: 22px; border-top: 1px solid var(--line); }
+  @media (max-width: 640px) { .facts { grid-template-columns: 1fr; gap: 16px; } }
   .facts dt { font-family: var(--font-mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin: 0; }
-  .facts dd { margin: 4px 0 0; font-size: 0.95rem; color: var(--ink); }
+  .facts dd { margin: 5px 0 0; font-size: 0.95rem; color: var(--ink); }
 
-  .regions { padding-block: clamp(44px, 7vw, 72px); border-top: 1px solid var(--line); }
-  .regions h2 { font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem); margin-bottom: 30px; }
-  .region-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  @media (max-width: 860px) { .region-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px) { .region-grid { grid-template-columns: 1fr; } }
-  .region-card { border: 1px solid var(--line); border-radius: 14px; padding: 20px; background: var(--card); }
-  .region-card h3 { font-size: 1.02rem; margin-bottom: 8px; }
-  .region-card p { color: var(--ink-soft); font-size: 0.88rem; }
-  .source { margin-top: 30px; font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
-  .source a { color: var(--ink-soft); text-underline-offset: 3px; }
-  .source a:hover { color: var(--ink); }
+  .shot { width: 100%; height: auto; display: block; border-radius: 18px; border: 1px solid var(--line); }
+  .pair, .trio { display: grid; gap: 18px; align-items: start; }
+  .pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .trio { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .trio .shot { border-radius: 14px; }
+  @media (max-width: 560px) { .pair, .trio { grid-template-columns: 1fr; } }
+  .trio .even { aspect-ratio: 4 / 5; object-fit: cover; }
+  /* Product cut-outs on a transparent background: no frame, fitted to the height of the post beside them. */
+  .trio .cutout { border: 0; border-radius: 0; aspect-ratio: 800 / 1243; object-fit: contain; }
+  /* One tall image on the left, two cropped to share its height on the right. */
+  .mosaic { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 1fr 1fr; gap: 18px; }
+  .mosaic .tall { grid-row: 1 / span 2; }
+  .mosaic .fill { position: relative; min-height: 0; }
+  .mosaic .fill .shot { position: absolute; inset: 0; height: 100%; object-fit: cover; }
+  @media (max-width: 560px) {
+    .mosaic { grid-template-columns: 1fr; grid-template-rows: none; }
+    .mosaic .tall { grid-row: auto; }
+    .mosaic .fill .shot { position: static; height: auto; }
+  }
+
+  .story { padding-block: clamp(44px, 7vw, 72px) clamp(32px, 5vw, 48px); }
+  .story > * + * { margin-top: clamp(48px, 7vw, 88px); }
+
+  .chapter { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 20px 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+  @media (max-width: 780px) { .chapter { grid-template-columns: 1fr; } }
+  .chapter h2 { font-size: clamp(1.5rem, 1.3rem + 0.8vw, 1.9rem); }
+  .chapter > p { color: var(--ink-soft); max-width: 62ch; }
+
+  .cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  @media (max-width: 560px) { .cards { grid-template-columns: 1fr; } }
+  .cards li { border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; background: var(--card); }
+  .cards strong { font-family: var(--font-display); font-size: 1.05rem; font-weight: 500; display: block; margin-bottom: 8px; }
+  .cards span { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.6; }
+  .cards .num { display: block; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
 
   footer.site { padding-block: 22px; }
   .foot-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
@@ -112,85 +119,81 @@
   </div>
 
   <header class="hero wrap">
-    <span class="eyebrow">Case Study — Global Collaboration</span>
-    <h1>Starbucks <span class="accent">&times;</span> Peanuts</h1>
-    <p class="hero-sub">Kindness, community and coffee — a Starbucks-exclusive collaboration with Peanuts, rolled out across Starbucks markets worldwide.</p>
+    <span class="eyebrow">Case Study — Merchandise Design</span>
+    <h1>Merchandise Design for <span class="accent">Starbucks</span></h1>
+    <p class="hero-sub">The objective was to create cohesive and culturally resonant merchandise collections that align with brand guidelines while appealing to regional markets. Each collection required a unique approach to design, considering local aesthetics, seasonal trends, and brand collaborations.</p>
     <div class="meta-row">
-      <span class="chip">March 2025</span>
-      <span class="chip">73 of 88 Markets</span>
-      <span class="chip">TMS · Starbucks Global Account</span>
+      <span class="chip">Starbucks</span>
+      <span class="chip">Creative Design</span>
+      <span class="chip">Print Design</span>
     </div>
+    <dl class="facts">
+      <div><dt>Tools &amp; Resources</dt><dd>Adobe Photoshop, Illustrator</dd></div>
+    </dl>
   </header>
 
   <div class="wrap">
-    <img class="cover" src="../project-starbucks-peanuts.webp" alt="Starbucks and Peanuts collaboration drinkware: a Joe Kind Snoopy cold cup, tumbler, and a Peanuts gang mug" />
+    <img class="shot" src="../project-starbucks-peanuts.webp" width="1440" height="700" alt="Peanuts + Starbucks drinkware: a Joe Kind Snoopy cup, a clear tumbler with Snoopy and a Peanuts gang mug on a pale green background" />
   </div>
 
-  <div class="wrap proj-body">
-    <div class="proj-main">
-      <div class="block">
-        <h2>Overview</h2>
-        <p>In March 2025, Starbucks and Peanuts launched a global brand partnership built on a simple idea: small acts of kindness ripple outward. The collaboration introduced Joe Kind Snoopy — a Starbucks-exclusive take on the classic Peanuts character — across an exclusive line of merchandise, food and beverages, rolling out to stores across more than 70 countries. The launch was timed to Starbucks' annual Global Month of Good, pairing a playful visual identity with real community-impact programs, including meal donations tied to partner volunteer hours.</p>
-      </div>
-      <div class="block">
-        <h2>My Role</h2>
-        <p>As part of the Starbucks Global Account team at TMS, I worked on seasonal merchandise collections and global brand collaborations like this one — turning concept art into production-ready product branding, packaging and presentation files for rollout across EMEA, APAC and the Americas.</p>
-      </div>
-      <div class="block">
-        <h2>Featured Drinks</h2>
-        <ul class="drink-list">
-          <li>
-            <strong>Joe Kind Snoopy Oatmilk Chocolate &amp; Cream Frappuccino</strong>
-            <span>Vanilla syrup and chocolate chips blended with chocolate and caramel sauces, topped with whipped cream, chocolate sauce and a Joe Kind Snoopy chocolate topper.</span>
-          </li>
-          <li>
-            <strong>Joe Kind Snoopy Oatmilk Chocolate &amp; Caramel Latte</strong>
-            <span>Espresso with a drizzle of caramel and chocolate sauces, steamed or iced, finished with whipped cream and the same chocolate topper.</span>
-          </li>
-        </ul>
-      </div>
+  <main class="story wrap">
+
+    <div class="trio">
+      <img class="shot even" src="starbucks/christmas-hot-cup.jpg" width="800" height="988" loading="lazy" alt="Cream reusable hot cup with the Starbucks siren and white stars, on a green Christmas background with gold ribbon and coffee beans" />
+      <img class="shot even" src="starbucks/christmas-cold-cup-red.jpg" width="800" height="996" loading="lazy" alt="Red studded cold cup with an embossed siren, among coffee beans, snowflakes and a star-eyes emoji" />
+      <img class="shot even" src="starbucks/christmas-cold-cup-gold.jpg" width="800" height="998" loading="lazy" alt="Gold studded cold cup with a strap and charms, on the same green Christmas background" />
     </div>
 
-    <aside class="facts">
-      <h3>Key Facts</h3>
-      <dl>
-        <div class="fact"><dt>Launch</dt><dd>March 25, 2025</dd></div>
-        <div class="fact"><dt>Merchandise Reach</dt><dd>73 of 88 markets</dd></div>
-        <div class="fact"><dt>Beverage Reach</dt><dd>40 markets</dd></div>
-        <div class="fact"><dt>Beverages Developed In</dt><dd>Japan</dd></div>
-        <div class="fact"><dt>Merchandise Designed In</dt><dd>Hong Kong</dd></div>
-        <div class="fact"><dt>Tied To</dt><dd>Starbucks Global Month of Good — a 15+ year tradition</dd></div>
-        <div class="fact"><dt>Community Impact</dt><dd>100 meals donated per partner volunteer hour in April, via The Global FoodBanking Network</dd></div>
-      </dl>
-    </aside>
-  </div>
+    <section class="chapter">
+      <h2>Role &amp; Responsibilities</h2>
+      <ul class="cards">
+        <li><strong>Concept Development</strong><span>Interpreted briefs to develop creative concepts that reflect seasonal themes and regional preferences.</span></li>
+        <li><strong>Design Execution</strong><span>Created detailed renderings and mock-ups for a variety of merchandise items, ensuring consistency across product lines.</span></li>
+        <li><strong>Collaboration</strong><span>Worked closely with cross-functional teams, including marketing, production, and external partners like Disney, to ensure designs met all requirements and standards.</span></li>
+        <li><strong>Production Handoff</strong><span>Prepared and delivered comprehensive design files and specifications for manufacturing, facilitating a smooth transition from design to production.</span></li>
+      </ul>
+    </section>
 
-  <section class="regions wrap">
-    <h2>Around the World</h2>
-    <div class="region-grid">
-      <div class="region-card">
-        <h3>Europe, Middle East &amp; Africa</h3>
-        <p>4,700+ stores across 39 markets, with an exclusive reusable Joe Kind Snoopy cup, new Frappuccino flavors, and a "Snoopy in Style" pop-up exhibit in Paris featuring a limited-edition Charlie Brownie.</p>
-      </div>
-      <div class="region-card">
-        <h3>China</h3>
-        <p>Immersive pop-up stores with 3D characters and Peanuts comics, plus a Joe Kind Snoopy ceramic mug and doghouse tote bag.</p>
-      </div>
-      <div class="region-card">
-        <h3>Latin America &amp; Caribbean</h3>
-        <p>Limited-edition merchandise and food across select countries, including signature Peanuts character cookies and collectible gift cards.</p>
-      </div>
-      <div class="region-card">
-        <h3>Asia Pacific &amp; Japan</h3>
-        <p>Peanuts-inspired baked goods — Snoopy and Charlie Brown macarons in South Korea, Snoopy sugar donuts and waffles in Japan — plus exclusive merch and animated eGift cards.</p>
-      </div>
-      <div class="region-card">
-        <h3>North America</h3>
-        <p>Mugs, tumblers and cold cups featuring the Peanuts gang, in participating stores across the U.S. and Canada.</p>
-      </div>
+    <div class="pair">
+      <img class="shot" src="starbucks/kuwait-national-day-story.jpg" width="960" height="1710" loading="lazy" alt="Starbucks Kuwait Instagram story for the 62nd Kuwait National Day, showing the national day tumblers, mugs and pins" />
+      <img class="shot" src="starbucks/kuwait-pins-story.jpg" width="960" height="1704" loading="lazy" alt="Starbucks Kuwait Instagram story: “Order early, order now”, a set of Kuwait landmark pins, only on talabat" />
     </div>
-    <p class="source">Source: <a href="https://about.starbucks.com/stories/2025/starbucks-and-peanuts-celebrate-kindness-community-and-coffee-around-the-world/" target="_blank" rel="noopener noreferrer">Starbucks Stories, March 2025</a></p>
-  </section>
+
+    <section class="chapter">
+      <h2>Design Process</h2>
+      <ol class="cards">
+        <li><span class="num">01</span><strong>Research &amp; Inspiration</strong><span>Analyzed market trends, regional cultural elements, and seasonal motifs to inform design direction.</span></li>
+        <li><span class="num">02</span><strong>Sketching &amp; Prototyping</strong><span>Developed initial sketches and prototypes to explore form, color, and material options.</span></li>
+        <li><span class="num">03</span><strong>Feedback &amp; Refinement</strong><span>Incorporated feedback from stakeholders to refine designs, ensuring alignment with brand identity and market expectations.</span></li>
+        <li><span class="num">04</span><strong>Finalization</strong><span>Completed final designs with detailed specifications, ready for production and distribution.</span></li>
+      </ol>
+    </section>
+
+    <div class="trio">
+      <img class="shot" src="starbucks/peru-20-years-post.jpg" width="800" height="1243" loading="lazy" alt="Starbucks Peru Instagram post for its 20th anniversary: a hand holding the Peru tumbler against orange curtains" />
+      <img class="shot cutout" src="starbucks/peru-tumbler-front.png" width="700" height="1757" loading="lazy" alt="Peru tumbler, front: the word PERÚ in colourful letters with stars and dots, blue lid" />
+      <img class="shot cutout" src="starbucks/peru-tumbler-back.png" width="700" height="1757" loading="lazy" alt="Peru tumbler, back: the Starbucks wordmark with flowers, leaves and coloured dots" />
+    </div>
+
+    <div class="pair">
+      <img class="shot" src="starbucks/turkiye-100-years-story.jpg" width="960" height="1705" loading="lazy" alt="Starbucks Türkiye Instagram story announcing the special series for the 100th anniversary of the Republic of Türkiye" />
+      <img class="shot" src="starbucks/turkiye-100-years-post.jpg" width="960" height="1555" loading="lazy" alt="Starbucks Türkiye Instagram post “Kahve, lezzet ve mutluluk bir arada” with the red 100th anniversary cups, tumbler and mugs" />
+    </div>
+
+    <img class="shot" src="starbucks/turkiye-100-years-collection.jpg" width="1600" height="1021" loading="lazy" alt="The Türkiye 100th anniversary collection on white: a hot cup, a tumbler, a studded cold cup, a mug and ornaments, all in red with Istanbul landmark drawings" />
+
+    <section class="chapter">
+      <h2>Outcome</h2>
+      <p>The merchandise collections were successfully launched across multiple regions, receiving positive feedback for their cultural relevance and design quality. Collaborations with local artists added a unique dimension to the product lines, enhancing brand appeal and customer engagement.</p>
+    </section>
+
+    <div class="mosaic">
+      <img class="shot tall" src="starbucks/she-is-this-display.jpg" width="960" height="1704" loading="lazy" alt="Store display of the “She Is This” collection by artist Shae Anthony: a sign and shelves of colourful cold cups" />
+      <div class="fill"><img class="shot" src="starbucks/she-is-this-cups.jpg" width="960" height="1199" loading="lazy" alt="“She Is This” cold cups and a purple studded tumbler laid out together" /></div>
+      <div class="fill"><img class="shot" src="starbucks/she-is-this-in-hand.jpg" width="960" height="1194" loading="lazy" alt="A hand holding a “She Is This” cold cup with a portrait of a woman, in front of a store shelf" /></div>
+    </div>
+
+  </main>
 
   <footer class="site">
     <div class="wrap foot-row">
