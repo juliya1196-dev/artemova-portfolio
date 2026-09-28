@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Julia Artemova</title>
-<meta name="description" content="Portfolio of Julia Artemova, Senior Graphic &amp; Packaging Designer based in Amsterdam." />
+<meta name="description" content="Portfolio of Julia Artemova, Senior Creative &amp; Graphic Designer / Art Director based in Amsterdam." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,440;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -57,42 +57,9 @@
     margin-inline: auto;
     padding-inline: clamp(18px, 5vw, 48px);
   }
-  .eyebrow {
-    font-family: var(--font-mono);
-    text-transform: uppercase;
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
-    color: var(--ink-soft);
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .reg {
-    width: 12px; height: 12px;
-    flex: none;
-    opacity: 0.75;
-  }
   h1, h2, h3 { font-family: var(--font-display); font-weight: 440; margin: 0; text-wrap: balance; }
   em { font-style: italic; color: var(--accent); }
   p { line-height: 1.6; margin: 0; }
-  .btn {
-    font-family: var(--font-mono);
-    text-transform: uppercase;
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 13px 22px;
-    border-radius: 2px;
-    border: 1px solid var(--line-strong);
-    text-decoration: none;
-    transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
-  }
-  .btn-fill { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
-  .btn-fill:hover { transform: translateY(-2px); }
-  .btn-line:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-  @media (prefers-reduced-motion: reduce) { .btn:hover { transform: none; } }
 
   /* ---------- dock nav ---------- */
   .dock {
@@ -237,29 +204,25 @@
     [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
   }
 
-  /* ---------- about ---------- */
-  .about-grid { display: grid; grid-template-columns: minmax(220px, 300px) 1fr; gap: 48px; align-items: start; }
-  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; } }
-  .about-photo-wrap { position: relative; max-width: 300px; }
+  /* ---------- about (same layout as the top of cv.html) ---------- */
+  .about-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 48px; align-items: end; }
+  @media (max-width: 640px) { .about-grid { grid-template-columns: 1fr; } .about-photo { grid-row: 1; } }
+  .about-name { font-size: clamp(2.4rem, 1.9rem + 3.2vw, 4rem); line-height: 1.05; }
+  .about-role { margin-top: 18px; font-family: var(--font-display); font-style: italic; font-size: clamp(1.15rem, 1rem + 0.6vw, 1.45rem); line-height: 1.35; color: var(--ink); }
+  .about-fields { margin-top: 6px; font-size: 1.05rem; color: var(--ink-soft); }
   .about-photo {
-    display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
-    border-radius: 18px; border: 1px solid var(--line);
-    filter: grayscale(1) contrast(1.06);
+    display: block; width: clamp(140px, 18vw, 190px); height: auto; aspect-ratio: 1; object-fit: cover;
+    border-radius: 18px; border: 1px solid var(--line); filter: grayscale(1) contrast(1.06);
   }
-  .about-tag {
-    position: absolute; left: 16px; bottom: -14px;
-    background: var(--accent); color: var(--accent-ink);
-    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.06em;
-    padding: 8px 13px; border-radius: 10px;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+  .about-bio { margin-top: clamp(48px, 7vw, 88px); font-family: var(--font-display); font-weight: 340; font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.7rem); line-height: 1.4; max-width: 38ch; }
+  .about-bio u { text-decoration-color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+  .about-cv {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 32px;
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em;
+    color: var(--ink); text-decoration: none; border: 1px solid var(--line-strong); border-radius: 999px; padding: 10px 18px;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
   }
-  .about-heading { margin-top: 40px; }
-  .about-bio { margin-top: 14px; max-width: 72ch; color: var(--ink-soft); font-size: 1.02rem; }
-  .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
-  @media (max-width: 480px) { .stat-row { grid-template-columns: 1fr; } }
-  .stat-block { border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; background: var(--card); }
-  .stat-head { font-family: var(--font-display); font-style: italic; font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.6rem); color: var(--ink); }
-  .stat-sub { margin-top: 8px; color: var(--ink-soft); font-size: 0.86rem; line-height: 1.5; }
+  .about-cv:hover, .about-cv:focus-visible { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
   /* ---------- work grid ---------- */
   .work-bleed { width: 100%; padding-inline: 20px; }
@@ -292,36 +255,22 @@
   .project-cta {
     font-family: var(--font-mono); text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.08em;
     color: #fff; border: 1px solid rgba(255,255,255,0.5); border-radius: 999px; padding: 8px 16px;
-    margin-top: 4px; opacity: 0; transform: translateY(6px);
+    align-self: center; margin-top: 4px; opacity: 0; transform: translateY(6px);
     transition: opacity .2s ease, transform .2s ease;
   }
   .project-tile:hover .project-cta, .project-tile:focus-visible .project-cta { opacity: 1; transform: translateY(0); }
   @media (prefers-reduced-motion: reduce) { .project-cta { transition: opacity .2s ease; transform: none; } }
   .project-note { position: absolute; z-index: 1; bottom: 16px; left: 50%; transform: translateX(-50%); font-family: var(--font-mono); text-transform: uppercase; font-size: 0.62rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); }
 
-  /* ---------- tools / edu ---------- */
-  .grid2 { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; }
-  @media (max-width: 820px) { .grid2 { grid-template-columns: 1fr; gap: 40px; } }
-  .tool-group + .tool-group { margin-top: 26px; }
-  .tool-group h4 { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); margin: 0 0 12px; font-weight: 500; }
-  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
-  .pill { font-size: 0.86rem; border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; color: var(--ink-soft); }
-  .info-card { border: 1px solid var(--line); border-radius: 3px; padding: 22px; background: var(--card); }
-  .info-card + .info-card { margin-top: 16px; }
-  .info-card .eyebrow { margin-bottom: 10px; }
-  .info-card h3 { font-size: 1.1rem; margin-bottom: 4px; }
-  .info-card p { color: var(--ink-soft); font-size: 0.92rem; }
-
   /* ---------- contact ---------- */
   .contact { border-bottom: none; }
-  .contact-inner { display: flex; flex-direction: column; gap: 28px; }
-  .contact h2 { font-size: clamp(2.1rem, 1.6rem + 2.4vw, 3.6rem); max-width: 16ch; }
-  .contact-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; }
-  .contact-grid { display: grid; grid-template-columns: repeat(3, auto); gap: 28px; font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft); margin-top: 8px; }
-  @media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
-  .contact-grid a { text-decoration: none; }
-  .contact-grid a:hover { color: var(--ink); }
-  .freelance-note { font-size: 0.85rem; color: var(--ink-faint); margin-top: 6px; }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 12px 56px; }
+  .contact-links a {
+    font-family: var(--font-display); font-weight: 440; font-size: clamp(1.6rem, 1.2rem + 2vw, 2.8rem); line-height: 1.2;
+    text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; text-decoration-color: var(--line-strong);
+    transition: color .15s ease, text-decoration-color .15s ease;
+  }
+  .contact-links a:hover, .contact-links a:focus-visible { color: var(--accent); text-decoration-color: currentColor; }
 
   footer.site { padding-block: 22px; }
   .foot-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
@@ -346,7 +295,7 @@
   <a class="dock-link" href="#work">Projects</a>
   <a class="dock-link" href="#contact">Contacts</a>
   <div class="dock-sep"></div>
-  <a class="dock-link dock-cv" href="https://artemovadesign.notion.site/portfolio" target="_blank" rel="noopener noreferrer">CV</a>
+  <a class="dock-link dock-cv" href="cv.html" target="_blank" rel="noopener">CV</a>
 </nav>
 
 <a class="to-top" href="#top">
@@ -366,74 +315,15 @@
   <section id="about" data-reveal>
     <div class="wrap">
       <div class="about-grid">
-        <div class="about-photo-wrap">
-          <img class="about-photo" src="julia-photo.png" alt="Portrait of Julia Artemova" width="280" height="300" />
-          <span class="about-tag">Amsterdam, NL</span>
+        <div>
+          <h2 class="about-name">Julia <em>Artemova</em></h2>
+          <p class="about-role">Senior Creative &amp; Graphic Designer / Art&nbsp;Director</p>
+          <p class="about-fields">Tech / Retail / Publishing</p>
         </div>
-        <div class="about-body">
-          <div class="stat-row">
-            <div class="stat-block">
-              <div class="stat-head">9+ Years</div>
-              <p class="stat-sub">Solving design challenges</p>
-            </div>
-            <div class="stat-block">
-              <div class="stat-head">8+ Core Disciplines</div>
-              <p class="stat-sub">Graphic Design, Art Direction, Marketing Campaigns, Illustration, Web Design, Design Systems</p>
-            </div>
-          </div>
-        </div>
+        <img class="about-photo" src="julia-photo.jpg" width="600" height="600" alt="Portrait of Julia Artemova" />
       </div>
-
-      <h2 class="about-heading">Hi, I'm Julia.</h2>
-      <p class="about-bio">I've been solving design challenges for over 9 years. I bring a strong sense of empathy to my work, allowing me to deeply understand client or business needs. My design decisions are grounded in business logic rather than personal taste. I take full responsibility for delivering solutions that effectively achieve the intended goals.</p>
-    </div>
-  </section>
-
-  <section id="toolkit" data-reveal>
-    <div class="wrap grid2">
-      <div>
-        <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>Tools &amp; Tech</span>
-        <h2 style="margin-top:12px; margin-bottom:28px;">The kit.</h2>
-
-        <div class="tool-group">
-          <h4>Design</h4>
-          <div class="pills">
-            <span class="pill">Photoshop</span><span class="pill">Illustrator</span><span class="pill">InDesign</span>
-            <span class="pill">Premiere Pro</span><span class="pill">After Effects</span><span class="pill">Figma</span>
-            <span class="pill">Procreate</span><span class="pill">Keynote</span>
-          </div>
-        </div>
-        <div class="tool-group">
-          <h4>AI Tools</h4>
-          <div class="pills">
-            <span class="pill">MidJourney</span><span class="pill">Adobe Firefly</span><span class="pill">ChatGPT</span>
-            <span class="pill">Krea</span><span class="pill">Runway</span><span class="pill">Kling</span>
-            <span class="pill">Sora</span><span class="pill">Recraft</span>
-          </div>
-        </div>
-        <div class="tool-group">
-          <h4>Productivity</h4>
-          <div class="pills">
-            <span class="pill">Notion</span><span class="pill">Microsoft Office</span><span class="pill">Smartsheets</span>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>Education</span>
-        <h2 style="margin-top:12px; margin-bottom:28px;">Credentials.</h2>
-
-        <div class="info-card">
-          <span class="eyebrow" style="margin-bottom:0">2014—2018</span>
-          <h3 style="margin-top:10px">Bachelor's Degree, Graphic Design</h3>
-          <p>International Institute of Design and Service</p>
-        </div>
-        <div class="info-card">
-          <span class="eyebrow" style="margin-bottom:0">Membership</span>
-          <h3 style="margin-top:10px">People of Print</h3>
-          <p>Official member of the international community of printmakers.</p>
-        </div>
-      </div>
+      <p class="about-bio">I’ve been solving design challenges for <u>over 9 years</u>. I bring a strong sense of <u>empathy</u> to my work, allowing me to deeply understand client or business needs. My design decisions are grounded in business <u>logic</u> rather than personal taste. I take full <u>responsibility</u> for delivering solutions that effectively achieve the intended goals.</p>
+      <a class="about-cv" href="cv.html" target="_blank" rel="noopener">Go to CV &#8599;</a>
     </div>
   </section>
 
@@ -444,7 +334,7 @@
           <div class="project-label">
             <span class="project-eyebrow">Global Collaboration</span>
             <h3 class="project-name">Starbucks × Peanuts</h3>
-            <span class="project-cta">View Case Study &#8599;</span>
+            <span class="project-cta">Go to project &#8599;</span>
           </div>
         </a>
 
@@ -452,15 +342,15 @@
           <div class="project-label">
             <span class="project-eyebrow">Drinkware Design</span>
             <h3 class="project-name">Disney</h3>
-            <span class="project-cta">View Case Study &#8599;</span>
+            <span class="project-cta">Go to project &#8599;</span>
           </div>
         </a>
 
         <a class="project-tile" href="projects/dodo-pizza-uk.html" target="_blank" rel="noopener" style="background-image:url('project-dodo-pizza-uk.jpg')">
           <div class="project-label">
             <span class="project-eyebrow">Art Direction</span>
-            <h3 class="project-name">Art Directing Visual Style of Dodo Pizza UK</h3>
-            <span class="project-cta">View Case Study &#8599;</span>
+            <h3 class="project-name">Visual Style of Dodo Pizza in UK</h3>
+            <span class="project-cta">Go to project &#8599;</span>
           </div>
         </a>
 
@@ -468,7 +358,23 @@
           <div class="project-label">
             <span class="project-eyebrow">Corporate Communications</span>
             <h3 class="project-name">Presentation &amp; Pitch Decks Design</h3>
-            <span class="project-cta">View Case Study &#8599;</span>
+            <span class="project-cta">Go to project &#8599;</span>
+          </div>
+        </a>
+
+        <a class="project-tile" href="projects/catalogue-shooting.html" target="_blank" rel="noopener" style="background-image:url('project-catalogue-shooting.webp')">
+          <div class="project-label">
+            <span class="project-eyebrow">Art Direction</span>
+            <h3 class="project-name">Visual for Combo Deals</h3>
+            <span class="project-cta">Go to project &#8599;</span>
+          </div>
+        </a>
+
+        <a class="project-tile" href="projects/social-media-content.html" target="_blank" rel="noopener" style="background-image:url('project-social-media-content.jpg')">
+          <div class="project-label">
+            <span class="project-eyebrow">Marketing</span>
+            <h3 class="project-name">Social Media Content</h3>
+            <span class="project-cta">Go to project &#8599;</span>
           </div>
         </a>
 
@@ -492,18 +398,9 @@
   </section>
 
   <section class="contact" id="contact" data-reveal>
-    <div class="wrap contact-inner">
-      <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>Get In Touch</span>
-      <h2>Let's put your brand on the shelf.</h2>
-      <div class="contact-links">
-        <a class="btn btn-fill" href="mailto:juliya1196@gmail.com">juliya1196@gmail.com</a>
-        <a class="btn btn-line" href="https://www.linkedin.com/in/juliya-artemov%D0%B0/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-      </div>
-      <div class="contact-grid">
-        <span>Based In — Amsterdam, NL</span>
-        <span>Status — Open To New Projects</span>
-      </div>
-      <p class="freelance-note">Also available for freelance. Recent freelance clients: Selfwork, Drinkit, Alfa Bank, Dodo Brands.</p>
+    <div class="wrap contact-links">
+      <a href="mailto:juliya1196@gmail.com">juliya1196@gmail.com</a>
+      <a href="https://www.linkedin.com/in/juliya-artemov%D0%B0/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
     </div>
   </section>
 
@@ -512,7 +409,7 @@
 <footer class="site">
   <div class="wrap foot-row">
     <span>© 2026 Julia Artemova</span>
-    <span>Senior Graphic &amp; Packaging Designer — Amsterdam, NL</span>
+    <span>Senior Creative &amp; Graphic Designer / Art&nbsp;Director — Amsterdam, NL</span>
   </div>
 </footer>
 

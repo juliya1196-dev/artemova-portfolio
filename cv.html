@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>CV — Julia Artemova</title>
+<meta name="description" content="CV of Julia Artemova, Senior Creative &amp; Graphic Designer / Art Director based in Amsterdam: experience, core competencies, tools and education." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,440;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #121010;
+    --paper-alt: #1B1817;
+    --card: #191614;
+    --ink: #F5EFE3;
+    --ink-soft: #C7BFAE;
+    --ink-faint: #8A8271;
+    --accent: #FF6B3D;
+    --accent-ink: #1A1108;
+    --line: rgba(245,239,227,0.14);
+    --line-strong: rgba(245,239,227,0.36);
+
+    --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+    --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+    --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  img { max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 980px; margin-inline: auto; padding-inline: clamp(18px, 5vw, 48px); }
+  p { line-height: 1.65; margin: 0; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 440; margin: 0; text-wrap: balance; }
+  .accent { color: var(--accent); font-style: italic; }
+
+  .backbar { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--line); }
+  .backlink {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em;
+    color: var(--ink-soft); text-decoration: none; padding-block: 16px;
+  }
+  .backlink:hover { color: var(--ink); }
+
+  .eyebrow {
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--ink-soft);
+  }
+
+  .hero { padding-block: clamp(40px, 7vw, 72px) 0; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 48px; align-items: end; }
+  @media (max-width: 640px) { .hero-grid { grid-template-columns: 1fr; } .portrait { grid-row: 1; } }
+  .hero h1 { font-size: clamp(2.4rem, 1.9rem + 3.2vw, 4rem); line-height: 1.05; margin-top: 14px; }
+  .hero-role { margin-top: 18px; font-family: var(--font-display); font-style: italic; font-size: clamp(1.15rem, 1rem + 0.6vw, 1.45rem); line-height: 1.35; color: var(--ink); }
+  .hero-fields { margin-top: 6px; font-size: 1.05rem; color: var(--ink-soft); }
+  .portrait {
+    display: block; width: clamp(140px, 18vw, 190px); height: auto; aspect-ratio: 1; object-fit: cover;
+    border-radius: 18px; border: 1px solid var(--line); filter: grayscale(1) contrast(1.06);
+  }
+  .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 34px 0 0; padding-top: 22px; border-top: 1px solid var(--line); }
+  @media (max-width: 640px) { .facts { grid-template-columns: 1fr; gap: 16px; } }
+  .facts dt { font-family: var(--font-mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin: 0; }
+  .facts dd { margin: 5px 0 0; font-size: 0.95rem; color: var(--ink); line-height: 1.5; overflow-wrap: anywhere; }
+  .facts a { text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 3px; }
+  .facts a:hover { color: var(--accent); text-decoration-color: currentColor; }
+  .facts .note { color: var(--ink-soft); }
+
+  .story { padding-block: clamp(44px, 7vw, 72px) clamp(32px, 5vw, 48px); }
+  .story > * + * { margin-top: clamp(48px, 7vw, 88px); }
+
+  .statement p { font-family: var(--font-display); font-weight: 340; font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.7rem); line-height: 1.4; max-width: 38ch; }
+  .statement u { text-decoration-color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+
+  .chapter { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 20px 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+  @media (max-width: 780px) { .chapter { grid-template-columns: 1fr; } }
+  .chapter h2 { font-size: clamp(1.5rem, 1.3rem + 0.8vw, 1.9rem); }
+  .chapter-body > * + * { margin-top: 28px; }
+
+  .skill-group h3, .tool-group h3 { font-family: var(--font-mono); font-weight: 500; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); margin-bottom: 10px; }
+  .skill-group p { color: var(--ink-soft); }
+
+  .job + .job { padding-top: 28px; border-top: 1px solid var(--line); }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; }
+  .job-head h3 { font-size: clamp(1.2rem, 1.1rem + 0.4vw, 1.4rem); }
+  .job-dates { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); white-space: nowrap; }
+  .job-company { margin-top: 6px; color: var(--ink); }
+  .job-points { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
+  .job-points li { position: relative; padding-left: 24px; color: var(--ink-soft); line-height: 1.6; }
+  .job-points li::before { content: "—"; position: absolute; left: 0; color: var(--ink-faint); }
+
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill { font-size: 0.86rem; border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; color: var(--ink-soft); }
+
+  .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  @media (max-width: 780px) { .cards { grid-template-columns: 1fr; } }
+  .info-card { border: 1px solid var(--line); border-radius: 3px; padding: 22px; background: var(--card); }
+  .info-card h3 { font-size: 1.1rem; margin-top: 10px; margin-bottom: 4px; }
+  .info-card p { color: var(--ink-soft); font-size: 0.92rem; }
+  .info-card ul { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 4px; font-family: var(--font-display); font-size: 1.1rem; }
+
+  footer.site { padding-block: 22px; }
+  .foot-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
+</style>
+</head>
+<body>
+
+  <div class="backbar">
+    <div class="wrap">
+      <a class="backlink" href="./">&larr; Back to Portfolio</a>
+    </div>
+  </div>
+
+  <header class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Curriculum Vitae — 2026</span>
+        <h1>Julia <span class="accent">Artemova</span></h1>
+        <p class="hero-role">Senior Creative &amp; Graphic Designer / Art&nbsp;Director</p>
+        <p class="hero-fields">Tech / Retail / Publishing</p>
+      </div>
+      <img class="portrait" src="julia-photo.jpg" width="600" height="600" alt="Portrait of Julia Artemova" />
+    </div>
+    <dl class="facts">
+      <div><dt>Email</dt><dd><a href="mailto:juliya1196@gmail.com">juliya1196@gmail.com</a></dd></div>
+      <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/juliya-artemov%D0%B0/" target="_blank" rel="noopener noreferrer">View profile ↗</a></dd></div>
+      <div><dt>Based in</dt><dd>Amsterdam, Netherlands<br /><span class="note">Sponsorship visa is not required</span></dd></div>
+    </dl>
+  </header>
+
+  <main class="story wrap">
+
+    <div class="statement">
+      <p>I’ve been solving design challenges for <u>over 9 years</u>. I bring a strong sense of <u>empathy</u> to my work, allowing me to deeply understand client or business needs. My design decisions are grounded in business <u>logic</u> rather than personal taste. I take full <u>responsibility</u> for delivering solutions that effectively achieve the intended goals.</p>
+    </div>
+
+    <section class="chapter">
+      <h2>Core competencies</h2>
+      <div class="chapter-body">
+        <div class="skill-group">
+          <h3>Functional Skills</h3>
+          <p>Graphic Design, Typography, Color Theory, Brand Design, Brand Identity, Logo Design, Design Concepts, Design Systems, Design Libraries, Style Guides, Product Design, Package Design, Storyboarding, Photography, Illustration, Infographics, Event Design, Content Creation, Creative Solutions, Creative Strategy, Marketing Campaigns, Corporate Communications, Art Direction, Project Management, Presentations, Collaboration Skills, Industry Trends, Brand Development, Process Improvements, Workflows, Management Skills, Leadership, In-house and Agency Experience.</p>
+        </div>
+        <div class="skill-group">
+          <h3>Print Design</h3>
+          <p>Product branding, Print Collateral, Publication Advertising, Case Studies, Brand Books, Environmental Graphics, Tradeshow Booths, Banners, Packaging, Poster, Specialty Printing, Catalogs, and Annual Reports.</p>
+        </div>
+        <div class="skill-group">
+          <h3>Digital Design</h3>
+          <p>Digital assets, Content Design, Landing Pages, Motion Graphics, Video, Photography, Social Media Advertising and Campaigns, Paid Advertisements, Custom E-mail Templates, Web Development.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <h2>Experience</h2>
+      <div class="chapter-body">
+
+        <article class="job">
+          <div class="job-head"><h3>Senior Packaging Designer</h3><span class="job-dates">2025—Present</span></div>
+          <p class="job-company">Karsten International — Retail, Manufacture</p>
+          <ul class="job-points">
+            <li>Lead complex packaging initiatives from concept to production, ensuring strategic alignment between brand storytelling, commercial objectives, and manufacturing feasibility.</li>
+            <li>Manage multiple high-volume projects simultaneously, setting priorities, streamlining workflows, and ensuring on-time delivery within tight production timelines.</li>
+            <li>Partner cross-functionally with product development, buying, marketing, and quality teams to align packaging solutions with business goals, compliance requirements, and global market needs.</li>
+            <li>Oversee print production excellence, including dielines, finishes, colour management.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head"><h3>Senior Creative Designer</h3><span class="job-dates">2022—2025</span></div>
+          <p class="job-company">TMS — Business Consulting and Services | Starbucks Global Account</p>
+          <ul class="job-points">
+            <li>Delivered 20+ seasonal merchandise collections for Starbucks, contributing to a 15% YOY increase in brand engagement.</li>
+            <li>Partnered collaborations with global companies like Disney, Universal and Netflix, and with artists (Peanuts, Shae, Sofie Birkin).</li>
+            <li>Led EMEA and MENA design projects.</li>
+            <li>Managed and oversaw product branding, Photoshop renderings, production art files, physical mockups, technical drawings, presentation tools, and packaging.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head"><h3>Art Director</h3><span class="job-dates">2022—2025</span></div>
+          <p class="job-company">Dodo Brands — International QSR Group | Dodo Pizza</p>
+          <ul class="job-points">
+            <li>Spearheaded the development of a brand identity system tailored for the competitive UK QSR market, informed by consumer and market research.</li>
+            <li>Conceptualized and executed social media campaigns that boosted brand awareness and engagement through storytelling and visuals.</li>
+            <li>Directed and styled photoshoots, producing high-impact digital and print assets for marketing, packaging, and in-store materials.</li>
+            <li>Led a multidisciplinary creative team and external agency partners, ensuring unified brand expression across all channels.</li>
+            <li>Liaised between internal stakeholders, the creative content team, and clients.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head"><h3>Graphic Designer &amp; Illustrator</h3><span class="job-dates">2020—2021</span></div>
+          <p class="job-company">BBDO — Full-Cycle Advertising Agency</p>
+          <ul class="job-points">
+            <li>Creating visual concepts and illustrations tailored for digital campaigns for a major automotive brand.</li>
+            <li>Collaborating closely with copywriters and art directors to align visuals with campaign messaging.</li>
+            <li>Delivering high-quality designs under tight deadlines in a fast-paced agency environment.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head"><h3>Design Team Leader</h3><span class="job-dates">2019—2020</span></div>
+          <p class="job-company">Skylark Learning — Educational Products &amp; Publishing for Children</p>
+          <ul class="job-points">
+            <li>Supporting and updating website including product cards visuals, interface flows, visual elements. Create a user-friendly experience aligned with brand identity.</li>
+            <li>Defined and executed product strategy through visual identity, ensuring consistency across packaging, publishing, and marketing materials.</li>
+            <li>Streamlined team workflows, improving delivery timelines and elevating design standards across touchpoints.</li>
+            <li>Created trade show and event designs for regional exhibitions.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head"><h3>Designer &amp; Print manager</h3><span class="job-dates">2017—2018</span></div>
+          <p class="job-company">Adept — Advertising &amp; Production Agency</p>
+          <ul class="job-points">
+            <li>Designed print materials (flyers, brochures, promotional collateral), tailored to client needs and brand guidelines.</li>
+            <li>Provided production support, working with in-house printing equipment to ensure precision, quality control and delivery.</li>
+            <li>Gained technical knowledge of print production, making creative ideas executable at scale and within budget.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="chapter">
+      <h2>Tools &amp; Tech</h2>
+      <div class="chapter-body">
+        <div class="tool-group">
+          <h3>Design</h3>
+          <div class="pills">
+            <span class="pill">Adobe Creative Suite (Ps, Ai, Id, Pr, Ae)</span><span class="pill">Figma</span><span class="pill">Procreate</span><span class="pill">Keynote</span>
+          </div>
+        </div>
+        <div class="tool-group">
+          <h3>AI Tools</h3>
+          <div class="pills">
+            <span class="pill">MidJourney</span><span class="pill">Adobe Firefly</span><span class="pill">ChatGPT</span>
+            <span class="pill">Krea</span><span class="pill">Runway</span><span class="pill">Kling</span>
+            <span class="pill">Sora</span><span class="pill">Recraft</span>
+          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Productivity</h3>
+          <div class="pills">
+            <span class="pill">Notion</span><span class="pill">Microsoft Office Suite</span><span class="pill">Smartsheets</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cards">
+      <div class="info-card">
+        <span class="eyebrow">Education · 2014—2018</span>
+        <h3>Bachelor’s degree, Graphic Design</h3>
+        <p>International Institute of Design and Service</p>
+      </div>
+      <div class="info-card">
+        <span class="eyebrow">Membership</span>
+        <h3>Official member of People of Print</h3>
+        <p>International community of printmakers</p>
+      </div>
+      <div class="info-card">
+        <span class="eyebrow">Freelance clients</span>
+        <ul>
+          <li>Selfwork</li>
+          <li>Dodo Brands</li>
+          <li>Drinkit</li>
+          <li>Alfa Bank</li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site">
+    <div class="wrap foot-row">
+      <span>© 2026 Julia Artemova</span>
+      <span>Senior Creative &amp; Graphic Designer / Art&nbsp;Director — Amsterdam, NL</span>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Social Media Content for Dodo Pizza — Julia Artemova</title>
+<meta name="description" content="Case study: social media content for Dodo Pizza UK — concept, photoshoot art direction, video, ad creatives and marketing graphics, by Julia Artemova." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,440;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #121010;
+    --paper-alt: #1B1817;
+    --card: #191614;
+    --ink: #F5EFE3;
+    --ink-soft: #C7BFAE;
+    --ink-faint: #8A8271;
+    --accent: #FF6B3D;
+    --accent-ink: #1A1108;
+    --line: rgba(245,239,227,0.14);
+    --line-strong: rgba(245,239,227,0.36);
+
+    --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+    --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+    --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  img { max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 980px; margin-inline: auto; padding-inline: clamp(18px, 5vw, 48px); }
+  p { line-height: 1.65; margin: 0; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 440; margin: 0; text-wrap: balance; }
+  .accent { color: var(--accent); font-style: italic; }
+
+  .backbar { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--line); }
+  .backlink {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em;
+    color: var(--ink-soft); text-decoration: none; padding-block: 16px;
+  }
+  .backlink:hover { color: var(--ink); }
+  .backbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  @media (max-width: 560px) { .next-short { display: none; } }
+
+  .eyebrow {
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--ink-soft);
+  }
+
+  .hero { padding-block: clamp(40px, 7vw, 72px) clamp(28px, 5vw, 40px); }
+  .hero h1 { font-size: clamp(2.4rem, 1.9rem + 3.2vw, 4rem); line-height: 1.05; margin-top: 14px; }
+  .hero-sub { margin-top: 18px; font-size: 1.1rem; color: var(--ink-soft); max-width: 56ch; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .chip {
+    font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
+    border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; color: var(--ink-soft);
+  }
+
+  .shot { width: 100%; height: auto; display: block; border-radius: 18px; border: 1px solid var(--line); }
+  video.shot { aspect-ratio: 1; max-width: 576px; margin-inline: auto; background: #000; }
+  .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  @media (max-width: 560px) { .pair { grid-template-columns: 1fr; } }
+
+  .story { padding-block: clamp(44px, 7vw, 72px) clamp(32px, 5vw, 48px); }
+  .story > * + * { margin-top: clamp(48px, 7vw, 88px); }
+
+  .lead { font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); color: var(--ink-soft); max-width: 62ch; }
+  .lead strong { color: var(--ink); font-weight: 600; }
+
+  .chapter { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 20px 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+  @media (max-width: 780px) { .chapter { grid-template-columns: 1fr; } }
+  .chapter h3 { font-size: clamp(1.35rem, 1.2rem + 0.6vw, 1.7rem); }
+  .chapter .num { display: block; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
+  .points { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .points li { position: relative; padding-left: 24px; color: var(--ink-soft); line-height: 1.6; max-width: 62ch; }
+  .points li::before { content: "—"; position: absolute; left: 0; color: var(--ink-faint); }
+  .points strong { color: var(--ink); font-weight: 600; }
+
+  footer.site { padding-block: 22px; }
+  .foot-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
+</style>
+</head>
+<body>
+
+  <div class="backbar">
+    <div class="wrap">
+      <a class="backlink" href="../">&larr; Back to Portfolio</a>
+      <a class="backlink" href="starbucks-peanuts.html"><span>Next<span class="next-short">: Starbucks × Peanuts</span> &rarr;</span></a>
+    </div>
+  </div>
+
+  <header class="hero wrap">
+    <span class="eyebrow">Case Study — Dodo Brands</span>
+    <h1>Social Media <span class="accent">Content</span></h1>
+    <p class="hero-sub">I led creative direction, including concept development, art direction of the photoshoot, design production, and digital/offline asset creation.</p>
+    <div class="meta-row">
+      <span class="chip">Marketing</span>
+      <span class="chip">Graphic design</span>
+      <span class="chip">Retouch</span>
+      <span class="chip">Photoshoot</span>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <img class="shot" src="social-media-content/christmas-party-deal.jpg" width="1640" height="624" alt="Christmas Party Deal banner: two long pizzas in boxes on a wooden table with candles and presents, “Get medium pizzas for just £8”, promo code DOPARTY" />
+  </div>
+
+  <main class="story wrap">
+
+    <p class="lead">As the creative designer for <strong>Dodo Pizza</strong>, I was responsible for the full cycle of visual content development and production across digital platforms. The goal was to create engaging, mouth-watering, and brand-consistent content for <strong>Instagram, TikTok</strong>, and <strong>targeted advertising</strong>.</p>
+
+    <img class="shot" src="social-media-content/promo-posts.jpg" width="1600" height="514" loading="lazy" alt="Three promo posts: “Ice cream as a gift” for Mother’s Day, “2 vegan pizzas for £9.99” for Veganuary, and “Get £1 pizza for collection” for National Pizza Day" />
+
+    <section class="chapter">
+      <div><span class="num">01</span><h3>Research &amp; Concept Development</h3></div>
+      <ul class="points">
+        <li>Analyzed Dodo Pizza’s brand identity, tone of voice, and core values.</li>
+        <li>Conducted research on the target audience, competitors’ content strategies, local trends, and user behavior.</li>
+        <li>Developed a creative concept focused on playfulness, engagement, and appetizing visuals that aligned with the brand’s spirit.</li>
+      </ul>
+    </section>
+
+    <video class="shot" controls playsinline preload="none" poster="social-media-content/pizza-heroes.jpg" width="1080" height="1080" aria-label="“Meet our pizza heroes” video from Dodo Pizza Leamington, starting with the Gourmet Proud Tomatoes &amp; Burrata pizza">
+      <source src="social-media-content/pizza-heroes-1080-vp9.mp4" type='video/mp4; codecs="vp09.00.40.08"' />
+      <source src="social-media-content/pizza-heroes-426.mp4" type="video/mp4" />
+    </video>
+
+    <div class="pair">
+      <img class="shot" src="social-media-content/all-roads-lead-to-rome.jpg" width="1080" height="1080" loading="lazy" alt="Post: “All roads may lead to Rome…” over a Roman-style pizza in a Dodo Pizza box on a football pitch" />
+      <img class="shot" src="social-media-content/roman-style-pizza-in-leamington.jpg" width="1080" height="1080" loading="lazy" alt="Post: “But only one road has Roman style pizza in Leamington”, with a pizza box and two Karma Drinks cans on the grass" />
+    </div>
+
+    <section class="chapter">
+      <div><span class="num">02</span><h3>Pre-Production &amp; Planning</h3></div>
+      <ul class="points">
+        <li>Created detailed <strong>moodboards</strong>, references, and platform-specific scripts and storyboards.</li>
+        <li>Organized the entire production process, including location scouting (kitchens, pizzerias), sourcing props and models, and assembling the production team.</li>
+        <li>Managed logistics and scheduling to ensure smooth execution within time and budget constraints.</li>
+      </ul>
+    </section>
+
+    <img class="shot" src="social-media-content/plant-based-meat-carousel.jpg" width="1600" height="514" loading="lazy" alt="Instagram carousel “Meet our plant-based meat”: four slides about the vegan chorizo made from seitan" />
+
+    <section class="chapter">
+      <div><span class="num">03</span><h3>Content Production</h3></div>
+      <ul class="points">
+        <li>Oversaw the shoot, focusing on visual composition, food styling, and brand alignment.</li>
+        <li>Produced video content for <strong>Reels and TikTok</strong>, as well as photos and animated assets for posts and stories.</li>
+        <li>Ensured that each piece of content conveyed the Dodo brand’s energy and made the audience crave the product.</li>
+      </ul>
+    </section>
+
+    <img class="shot" src="social-media-content/app-screens.jpg" width="1600" height="514" loading="lazy" alt="Three posts showing the Dodo Pizza app on phones: basket, menu and pizza screens, with #DODOPIZZAUK" />
+
+    <video class="shot" controls playsinline preload="none" poster="social-media-content/app-launch.jpg" width="720" height="720" aria-label="Video from Dodo Pizza Leamington Spa: phones showing the Dodo Pizza app over English countryside, “Get App-solutely delicious pizzas delivered to your door in 20 minutes”">
+      <source src="social-media-content/app-launch.mp4" type="video/mp4" />
+    </video>
+
+    <section class="chapter">
+      <div><span class="num">04</span><h3>Platform Adaptation</h3></div>
+      <ul class="points">
+        <li>Edited and formatted videos specifically for TikTok and Instagram Reels.</li>
+        <li>Designed targeted ad creatives, including carousels, banners, and story ads.</li>
+        <li>Exported all content in accordance with platform-specific technical requirements (resolutions, lengths, formats).</li>
+      </ul>
+    </section>
+
+    <div class="pair">
+      <img class="shot" src="social-media-content/burrata-pizza.jpg" width="1080" height="1080" loading="lazy" alt="Hands taking a slice of burrata and basil pizza from a Dodo Pizza box on a marble table" />
+      <img class="shot" src="../project-social-media-content.jpg" width="1080" height="1080" loading="lazy" alt="Close-up of four Roman-style pizza slices with burrata, salmon and avocado, vegan chorizo and scallops, tagged #DODOPIZZAUK" />
+    </div>
+
+    <section class="chapter">
+      <div><span class="num">05</span><h3>Visual Support for Marketing Activities</h3></div>
+      <ul class="points">
+        <li>Created graphics for promotions, special offers, and collaborations.</li>
+        <li>Developed reusable templates that could be scaled and customized for different cities and audiences.</li>
+        <li>Collaborated with Dodo Pizza’s marketing team to evaluate content performance and iterate based on feedback and analytics.</li>
+      </ul>
+    </section>
+
+    <img class="shot" src="social-media-content/magazine-ad.jpg" width="1600" height="1077" loading="lazy" alt="Dodo Pizza magazine ad “Why our dough is dodougher?”, printed in a local magazine and as the layout" />
+
+    <p class="lead">This project was a great opportunity to combine creative thinking, production management, and a deep understanding of brand-driven marketing. The final content stayed true to Dodo Pizza’s DNA while driving high engagement and positive audience feedback.</p>
+
+  </main>
+
+  <footer class="site">
+    <div class="wrap foot-row">
+      <span>© 2026 Julia Artemova</span>
+      <span>Senior Creative &amp; Graphic Designer / Art&nbsp;Director — Amsterdam, NL</span>
+    </div>
+  </footer>
+
+</body>
+</html>
