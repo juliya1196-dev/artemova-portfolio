@@ -34,7 +34,7 @@
     color: var(--ink);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
-    padding-bottom: 60px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
   img { max-width: 100%; }
   a { color: inherit; }
@@ -50,6 +50,8 @@
     color: var(--ink-soft); text-decoration: none; padding-block: 16px;
   }
   .backlink:hover { color: var(--ink); }
+  .backbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  @media (max-width: 560px) { .next-short { display: none; } }
 
   .eyebrow {
     font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--ink-soft);
@@ -92,11 +94,12 @@
   .region-card { border: 1px solid var(--line); border-radius: 14px; padding: 20px; background: var(--card); }
   .region-card h3 { font-size: 1.02rem; margin-bottom: 8px; }
   .region-card p { color: var(--ink-soft); font-size: 0.88rem; }
+  .source { margin-top: 30px; font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
+  .source a { color: var(--ink-soft); text-underline-offset: 3px; }
+  .source a:hover { color: var(--ink); }
 
-  footer { border-top: 1px solid var(--line); padding-block: 28px; margin-top: 8px; }
-  .foot-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); }
-  .foot-row a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; }
-  .foot-row a:hover { color: var(--ink); }
+  footer.site { padding-block: 22px; }
+  .foot-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
 </style>
 </head>
 <body>
@@ -104,6 +107,7 @@
   <div class="backbar">
     <div class="wrap">
       <a class="backlink" href="../">&larr; Back to Portfolio</a>
+      <a class="backlink" href="disney-drinkware.html"><span>Next<span class="next-short">: Disney</span> &rarr;</span></a>
     </div>
   </div>
 
@@ -185,12 +189,13 @@
         <p>Mugs, tumblers and cold cups featuring the Peanuts gang, in participating stores across the U.S. and Canada.</p>
       </div>
     </div>
+    <p class="source">Source: <a href="https://about.starbucks.com/stories/2025/starbucks-and-peanuts-celebrate-kindness-community-and-coffee-around-the-world/" target="_blank" rel="noopener noreferrer">Starbucks Stories, March 2025</a></p>
   </section>
 
-  <footer class="wrap">
-    <div class="foot-row">
-      <span>Julia Artemova — Senior Graphic &amp; Packaging Designer</span>
-      <span>Source: <a href="https://about.starbucks.com/stories/2025/starbucks-and-peanuts-celebrate-kindness-community-and-coffee-around-the-world/" target="_blank" rel="noopener noreferrer">Starbucks Stories, March 2025</a></span>
+  <footer class="site">
+    <div class="wrap foot-row">
+      <span>© 2026 Julia Artemova</span>
+      <span>Senior Graphic &amp; Packaging Designer — Amsterdam, NL</span>
     </div>
   </footer>
 

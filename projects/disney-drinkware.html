@@ -34,7 +34,7 @@
     color: var(--ink);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
-    padding-bottom: 60px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
   img { max-width: 100%; }
   a { color: inherit; }
@@ -50,6 +50,8 @@
     color: var(--ink-soft); text-decoration: none; padding-block: 16px;
   }
   .backlink:hover { color: var(--ink); }
+  .backbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  @media (max-width: 560px) { .next-short { display: none; } }
 
   .eyebrow {
     font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--ink-soft);
@@ -90,8 +92,8 @@
 
   .statement p { font-family: var(--font-display); font-weight: 340; font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.7rem); line-height: 1.4; max-width: 38ch; }
 
-  footer { border-top: 1px solid var(--line); padding-block: 28px; margin-top: 8px; }
-  .foot-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); }
+  footer.site { padding-block: 22px; }
+  .foot-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
 </style>
 </head>
 <body>
@@ -99,6 +101,7 @@
   <div class="backbar">
     <div class="wrap">
       <a class="backlink" href="../">&larr; Back to Portfolio</a>
+      <a class="backlink" href="dodo-pizza-uk.html"><span>Next<span class="next-short">: Dodo Pizza UK</span> &rarr;</span></a>
     </div>
   </div>
 
@@ -175,9 +178,10 @@
 
   </main>
 
-  <footer class="wrap">
-    <div class="foot-row">
-      <span>Julia Artemova — Senior Graphic &amp; Packaging Designer</span>
+  <footer class="site">
+    <div class="wrap foot-row">
+      <span>© 2026 Julia Artemova</span>
+      <span>Senior Graphic &amp; Packaging Designer — Amsterdam, NL</span>
     </div>
   </footer>
 

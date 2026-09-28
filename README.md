@@ -41,26 +41,29 @@ This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, lo
 | `project-presentations.webp` | Cover: Presentation & Pitch Decks |
 | `portfolio.html` | Copy of `index.html` for the Claude preview only. Local file, listed in `.gitignore` so it never goes to GitHub. |
 
+**Moving between case studies.** Each case-study page has a "Next: …" link on the right of the sticky top bar (just "Next" on phones). It opens in the same tab. The order follows the home grid and loops: Starbucks × Peanuts → Disney → Dodo Pizza UK → Presentations → back to Starbucks. When a new case study is added, point the previous last page's link to it, and point the new page's link back to Starbucks. (A big "Next Project" cover tile at the bottom was tried and removed at Julia's request: next-project navigation lives in the top bar only.)
+
+**Case-study footer** is the same as the home page footer: "© 2026 Julia Artemova" on the left, "Senior Graphic & Packaging Designer — Amsterdam, NL" on the right, no divider line, at the very bottom of the page. The Starbucks page's "Source: Starbucks Stories" credit sits at the end of its "Around the World" section instead of in the footer.
+
 `portfolio.html` is `index.html` without the page wrapper lines (`<!doctype>`, `<html>`, `<head>`, `<meta charset>`, `<meta viewport>`, `</head>`, `<body>`, `</body>`, `</html>`), because the Claude preview adds its own. Edit `index.html`, then regenerate `portfolio.html` from it only if the preview needs updating.
 
 ## Page structure (top to bottom)
 
 0. **Loader**: full-screen dark overlay with Julia's orange "art" logo rising letter by letter, a thin orange progress line and a percentage. It waits for the fonts and the first 4 seconds of the showreel (at least 1.3 s so the animation plays, at most 6 s), then slides up like a curtain and the showreel starts from the beginning. With reduced motion it simply fades. It only exists when JavaScript runs (`html.js`), and a timer lifts it even in a background tab.
-1. **Bottom dock nav**: fixed, centered, white rounded rectangle. Julia's orange logo (SVG inlined), then Projects · About · Contacts · CV. "CV" links to her Notion portfolio.
+1. **Bottom dock nav**: fixed, centered, white rounded rectangle. Julia's orange logo (SVG inlined), then About · Projects · Contacts · CV (same order as the sections on the page). "CV" links to her Notion portfolio.
    - **Back to top**: white pill in the top-left corner (same look as the dock) with an up arrow. Appears once the page is scrolled more than two screen heights, links to `#top`, scrolls smoothly (instantly with reduced motion).
 2. **Hero** (`#hero`): the showreel video at full width (`showreel-small.mp4` on phones, `showreel.mp4` elsewhere, picked by `<source media>`), autoplaying, muted and looping. It keeps its own 16:9 shape instead of filling the screen height, because the collage runs to the left and right edges and cropping would cut those images off. Black background to match the video. If the browser paused it in a background tab, it restarts when the tab becomes visible.
-3. **Projects** (`#work`): 2-column grid, 20px side padding and 20px gaps, square corners, no borders. Each tile is a full-bleed image with a dark overlay and the title centered.
+3. **About** (`#about`): photo on the left, "9+ Years" and "8+ Core Disciplines" blocks on the right. Below them, "Hi, I'm Julia." and the bio paragraph.
+4. **Toolkit** (`#toolkit`): Tools & Tech pills, plus Education and People of Print membership cards.
+5. **Projects** (`#work`): 2-column grid, 20px side padding and 20px gaps, square corners, no borders. Each tile is a full-bleed image with a dark overlay and the title centered.
    1. Starbucks × Peanuts (Global Collaboration). Links to its case-study page.
    2. Disney (Drinkware Design). Links to its case-study page.
    3. Art Directing Visual Style of Dodo Pizza UK (Art Direction). Links to its case-study page.
    4. Presentation & Pitch Decks Design (Corporate Communications). Links to its case-study page.
    5. BBDO (Automotive Campaign). Placeholder, no cover yet.
    6. Skylark Learning (Digital Product Design). Placeholder, no cover yet.
-4. **About** (`#about`): photo on the left, "9+ Years" and "8+ Core Disciplines" blocks on the right. Below them, "Hi, I'm Julia." and the bio paragraph.
-5. **Capabilities** (`#capabilities`): 5 rows (Package Design, Brand & Identity, Art Direction, Print Production, Digital & Content).
-6. **Toolkit** (`#toolkit`): Tools & Tech pills, plus Education and People of Print membership cards.
-7. **Contact** (`#contact`): email button, LinkedIn button, location and status, freelance clients note.
-8. **Footer**: © 2026 line.
+6. **Contact** (`#contact`): email button, LinkedIn button, location and status, freelance clients note.
+7. **Footer**: © 2026 line.
 
 Sections slide up and fade in as they scroll into view (`data-reveal` on each `<section>` plus an IntersectionObserver), and scrolling snaps gently to section starts. Both switch off for people who have reduced motion turned on; for them the showreel also starts paused, with play controls.
 
@@ -75,7 +78,8 @@ Sections slide up and fade in as they scroll into view (`data-reveal` on each `<
 - No top header. The bottom dock is the only navigation.
 - Project tiles have no rounded corners and no outline. The image fills the tile and the name is centered.
 - The bio is Julia's CV intro, word for word. Don't rewrite it.
-- Removed on purpose: hero headline and text, top info strip, scrolling client ticker, "Selected Work" heading, Experience timeline, the "About" label and icon, phone number, and the "Full Portfolio" link in Contact.
+- About and Tools & Tech come straight after the showreel; Projects follow them.
+- Removed on purpose: hero headline and text, top info strip, scrolling client ticker, "Selected Work" heading, Experience timeline, the "About" label and icon, the Capabilities section (5 disciplines, "What's on spec."), phone number, and the "Full Portfolio" link in Contact.
 - Case-study pages are built from Julia's Notion pages: same structure and images, text word for word, no link back to Notion. The tile becomes a link with `target="_blank"`.
 - Missing images get an honest placeholder ("Cover coming soon"), never a stand-in picture.
 

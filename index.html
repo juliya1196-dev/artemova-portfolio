@@ -225,10 +225,6 @@
 
   /* ---------- sections ---------- */
   section { padding-block: clamp(48px, 7vw, 84px); border-bottom: 1px solid var(--line); scroll-snap-align: start; }
-  .sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
-  .sec-head h2 { font-size: clamp(1.9rem, 1.5rem + 1.6vw, 2.7rem); }
-  .sec-note { max-width: 34ch; color: var(--ink-soft); font-size: 0.95rem; text-align: right; }
-  @media (max-width: 640px) { .sec-note { text-align: left; } }
 
   [data-reveal] { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: no-preference) {
@@ -264,17 +260,6 @@
   .stat-block { border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; background: var(--card); }
   .stat-head { font-family: var(--font-display); font-style: italic; font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.6rem); color: var(--ink); }
   .stat-sub { margin-top: 8px; color: var(--ink-soft); font-size: 0.86rem; line-height: 1.5; }
-
-  /* ---------- capability spec list ---------- */
-  .speclist { border-top: 1px solid var(--line); }
-  .specrow {
-    display: grid; grid-template-columns: 220px 1fr; gap: 24px;
-    padding-block: 22px; border-bottom: 1px solid var(--line);
-  }
-  .specrow .label { font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink); padding-top: 3px; }
-  .specrow .desc { color: var(--ink-soft); max-width: 56ch; }
-  .specrow .num { font-family: var(--font-mono); color: var(--ink-faint); margin-right: 8px; }
-  @media (max-width: 640px) { .specrow { grid-template-columns: 1fr; gap: 6px; } }
 
   /* ---------- work grid ---------- */
   .work-bleed { width: 100%; padding-inline: 20px; }
@@ -357,8 +342,8 @@
     <svg viewBox="0 0 157.77 63.89" xmlns="http://www.w3.org/2000/svg"><path fill="#ff4b27" d="M0,38.33C0,24.68,6.78,12.97,21.1,12.97c12.2,0,16.55,6.2,19.07,12.49h4.16l-3.19-9.2v-2.32h16.55v48.98h-16.55v-2.32l3.19-9.29h-4.16c-2.52,6.39-6.87,12.58-19.07,12.58C6.78,63.89,0,52.08,0,38.33ZM28.94,49.27c8.13,0,12.2-3.19,12.2-10.94s-4.06-10.74-12.2-10.74-12.39,3.19-12.39,10.74,4.26,10.94,12.39,10.94Z"/><path fill="#ff4b27" d="M74.24,13.94h32.81v14.62h-24.78v34.36h-16.65V22.36c0-5.52,3.1-8.42,8.62-8.42Z"/><path fill="#ff4b27" d="M157.77,62.92h-26.33c-5.42,0-8.42-3-8.42-8.52v-25.84h-11.81v-14.62h11.81V5.23l16.55-5.23v13.94h16.26v14.62h-16.26v19.84l18.2-.1v14.62Z"/></svg>
   </a>
   <div class="dock-sep"></div>
-  <a class="dock-link" href="#work">Projects</a>
   <a class="dock-link" href="#about">About</a>
+  <a class="dock-link" href="#work">Projects</a>
   <a class="dock-link" href="#contact">Contacts</a>
   <div class="dock-sep"></div>
   <a class="dock-link dock-cv" href="https://artemovadesign.notion.site/portfolio" target="_blank" rel="noopener noreferrer">CV</a>
@@ -376,6 +361,80 @@
       <source src="showreel-small.mp4" type="video/mp4" media="(max-width: 700px)" />
       <source src="showreel.mp4" type="video/mp4" />
     </video>
+  </section>
+
+  <section id="about" data-reveal>
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-photo-wrap">
+          <img class="about-photo" src="julia-photo.png" alt="Portrait of Julia Artemova" width="280" height="300" />
+          <span class="about-tag">Amsterdam, NL</span>
+        </div>
+        <div class="about-body">
+          <div class="stat-row">
+            <div class="stat-block">
+              <div class="stat-head">9+ Years</div>
+              <p class="stat-sub">Solving design challenges</p>
+            </div>
+            <div class="stat-block">
+              <div class="stat-head">8+ Core Disciplines</div>
+              <p class="stat-sub">Graphic Design, Art Direction, Marketing Campaigns, Illustration, Web Design, Design Systems</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="about-heading">Hi, I'm Julia.</h2>
+      <p class="about-bio">I've been solving design challenges for over 9 years. I bring a strong sense of empathy to my work, allowing me to deeply understand client or business needs. My design decisions are grounded in business logic rather than personal taste. I take full responsibility for delivering solutions that effectively achieve the intended goals.</p>
+    </div>
+  </section>
+
+  <section id="toolkit" data-reveal>
+    <div class="wrap grid2">
+      <div>
+        <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>Tools &amp; Tech</span>
+        <h2 style="margin-top:12px; margin-bottom:28px;">The kit.</h2>
+
+        <div class="tool-group">
+          <h4>Design</h4>
+          <div class="pills">
+            <span class="pill">Photoshop</span><span class="pill">Illustrator</span><span class="pill">InDesign</span>
+            <span class="pill">Premiere Pro</span><span class="pill">After Effects</span><span class="pill">Figma</span>
+            <span class="pill">Procreate</span><span class="pill">Keynote</span>
+          </div>
+        </div>
+        <div class="tool-group">
+          <h4>AI Tools</h4>
+          <div class="pills">
+            <span class="pill">MidJourney</span><span class="pill">Adobe Firefly</span><span class="pill">ChatGPT</span>
+            <span class="pill">Krea</span><span class="pill">Runway</span><span class="pill">Kling</span>
+            <span class="pill">Sora</span><span class="pill">Recraft</span>
+          </div>
+        </div>
+        <div class="tool-group">
+          <h4>Productivity</h4>
+          <div class="pills">
+            <span class="pill">Notion</span><span class="pill">Microsoft Office</span><span class="pill">Smartsheets</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>Education</span>
+        <h2 style="margin-top:12px; margin-bottom:28px;">Credentials.</h2>
+
+        <div class="info-card">
+          <span class="eyebrow" style="margin-bottom:0">2014—2018</span>
+          <h3 style="margin-top:10px">Bachelor's Degree, Graphic Design</h3>
+          <p>International Institute of Design and Service</p>
+        </div>
+        <div class="info-card">
+          <span class="eyebrow" style="margin-bottom:0">Membership</span>
+          <h3 style="margin-top:10px">People of Print</h3>
+          <p>Official member of the international community of printmakers.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="work" data-reveal>
@@ -428,114 +487,6 @@
           </div>
           <span class="project-note">Cover coming soon</span>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" data-reveal>
-    <div class="wrap">
-      <div class="about-grid">
-        <div class="about-photo-wrap">
-          <img class="about-photo" src="julia-photo.png" alt="Portrait of Julia Artemova" width="280" height="300" />
-          <span class="about-tag">Amsterdam, NL</span>
-        </div>
-        <div class="about-body">
-          <div class="stat-row">
-            <div class="stat-block">
-              <div class="stat-head">9+ Years</div>
-              <p class="stat-sub">Solving design challenges</p>
-            </div>
-            <div class="stat-block">
-              <div class="stat-head">8+ Core Disciplines</div>
-              <p class="stat-sub">Graphic Design, Art Direction, Marketing Campaigns, Illustration, Web Design, Design Systems</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h2 class="about-heading">Hi, I'm Julia.</h2>
-      <p class="about-bio">I've been solving design challenges for over 9 years. I bring a strong sense of empathy to my work, allowing me to deeply understand client or business needs. My design decisions are grounded in business logic rather than personal taste. I take full responsibility for delivering solutions that effectively achieve the intended goals.</p>
-    </div>
-  </section>
-
-  <section id="capabilities" data-reveal>
-    <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>Capabilities</span>
-          <h2 style="margin-top:12px">What's on spec.</h2>
-        </div>
-        <p class="sec-note">Five disciplines, one throughline: decisions grounded in business logic, not personal taste.</p>
-      </div>
-      <div class="speclist">
-        <div class="specrow">
-          <div class="label"><span class="num">01</span>Package Design</div>
-          <div class="desc">Structural concepts, dielines, POS displays, and seasonal collections — built to survive the factory floor as well as the shelf.</div>
-        </div>
-        <div class="specrow">
-          <div class="label"><span class="num">02</span>Brand &amp; Identity</div>
-          <div class="desc">Brand identity, logo design, design systems, style guides, and brand books that stay consistent across every touchpoint.</div>
-        </div>
-        <div class="specrow">
-          <div class="label"><span class="num">03</span>Art Direction</div>
-          <div class="desc">Creative strategy, storyboarding, and photoshoot direction for marketing campaigns and seasonal merchandise.</div>
-        </div>
-        <div class="specrow">
-          <div class="label"><span class="num">04</span>Print Production</div>
-          <div class="desc">Print collateral, catalogs, annual reports, and specialty printing — with close attention to finishes and colour management.</div>
-        </div>
-        <div class="specrow">
-          <div class="label"><span class="num">05</span>Digital &amp; Content</div>
-          <div class="desc">Landing pages, content design, motion graphics, and custom email templates for digital campaigns and launches.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="toolkit" data-reveal>
-    <div class="wrap grid2">
-      <div>
-        <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>Tools &amp; Tech</span>
-        <h2 style="margin-top:12px; margin-bottom:28px;">The kit.</h2>
-
-        <div class="tool-group">
-          <h4>Design</h4>
-          <div class="pills">
-            <span class="pill">Photoshop</span><span class="pill">Illustrator</span><span class="pill">InDesign</span>
-            <span class="pill">Premiere Pro</span><span class="pill">After Effects</span><span class="pill">Figma</span>
-            <span class="pill">Procreate</span><span class="pill">Keynote</span>
-          </div>
-        </div>
-        <div class="tool-group">
-          <h4>AI Tools</h4>
-          <div class="pills">
-            <span class="pill">MidJourney</span><span class="pill">Adobe Firefly</span><span class="pill">ChatGPT</span>
-            <span class="pill">Krea</span><span class="pill">Runway</span><span class="pill">Kling</span>
-            <span class="pill">Sora</span><span class="pill">Recraft</span>
-          </div>
-        </div>
-        <div class="tool-group">
-          <h4>Productivity</h4>
-          <div class="pills">
-            <span class="pill">Notion</span><span class="pill">Microsoft Office</span><span class="pill">Smartsheets</span>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>Education</span>
-        <h2 style="margin-top:12px; margin-bottom:28px;">Credentials.</h2>
-
-        <div class="info-card">
-          <span class="eyebrow" style="margin-bottom:0">2014—2018</span>
-          <h3 style="margin-top:10px">Bachelor's Degree, Graphic Design</h3>
-          <p>International Institute of Design and Service</p>
-        </div>
-        <div class="info-card">
-          <span class="eyebrow" style="margin-bottom:0">Membership</span>
-          <h3 style="margin-top:10px">People of Print</h3>
-          <p>Official member of the international community of printmakers.</p>
-        </div>
       </div>
     </div>
   </section>
