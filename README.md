@@ -14,7 +14,8 @@ Plain HTML + CSS + a few lines of JS. No framework, no build step: open `index.h
 | Local files | `~/artemova-portfolio` (git clone of the repo) |
 | GitHub repo | https://github.com/juliya1196-dev/artemova-portfolio (branch `main`) |
 | Claude preview (private) | https://claude.ai/artifact/SLw4XN7WY7JYgnxHEEiDw2 |
-| Live site | https://juliya1196-dev.github.io/artemova-portfolio/ (GitHub Pages, deploys automatically from `main` a minute or two after each push) |
+| Live site | **https://artemovadesign.com** (GitHub Pages, deploys automatically from `main` a minute or two after each push). The old https://juliya1196-dev.github.io/artemova-portfolio/ addresses redirect there, page by page, and www.artemovadesign.com redirects to the bare domain. |
+| Domain | `artemovadesign.com`, bought by Julia at Porkbun on 2026-09-28 ($11.08/yr, auto-renew on, WHOIS privacy on; paid until 2027-09-28). DNS at Porkbun: four `A` records for the bare domain → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (GitHub Pages), and `CNAME www` → `juliya1196-dev.github.io`. GitHub Pages custom domain = `artemovadesign.com` (the `CNAME` file in the repo), "Enforce HTTPS" on; the Let's Encrypt certificate renews by itself. |
 | Local preview | http://localhost:8000 — `python3 -m http.server 8000` in the project folder, or the `site` entry in `.claude/launch.json` for Claude's browser pane |
 
 This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, logged in as `juliya1196-dev`). Updates go to GitHub with `git commit` + `git push`; no more uploading files by hand. Commits use the GitHub no-reply email so Julia's address stays out of the public history.
@@ -24,6 +25,8 @@ This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, lo
 | File | Purpose |
 |---|---|
 | `index.html` | **The site.** Source of truth; this is what goes to GitHub. |
+| `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` | The browser-tab icon: Julia's orange "a" (`#ff4b27`), from her `Безымянный-1.svg` in Downloads, trimmed to the letter alone (the file also carried the full wordmark, hidden off-canvas) on a square canvas. Browsers that read SVG icons use `favicon.svg`; the rest (older Safari) use the 32px PNG; `apple-touch-icon.png` (180px, the "a" on the site's `#121010`) is for iPhone home screens and bookmarks. Every page links all three in its `<head>` (`../` from `projects/`). |
+| `CNAME` | One line, `artemovadesign.com`: tells GitHub Pages which domain serves the site. Don't delete or rename it, or the domain stops working. |
 | `projects/starbucks-peanuts.html` | Case-study page for the first tile (opens in a new tab): "Merchandise Design for Starbucks". Rebuilt on 2026-09-28 from Julia's Notion page (https://artemovadesign.notion.site/Merchandise-Design-for-Starbucks-21bc11c954908090a00ccbef88c874dd) like the other case studies: text word for word, images in Notion's order and column groupings (Christmas cups, Kuwait National Day, Peru 20 years, Türkiye 100th anniversary, "She Is This" by Shae Anthony). It replaced an earlier Starbucks × Peanuts write-up paraphrased from Starbucks Stories. The file name is kept so links don't break. |
 | `projects/starbucks/` | The 14 images for that page (Notion's first image is the cover, `project-starbucks-peanuts.webp`). The two Peru tumbler shots are transparent PNGs shown without a frame (`.cutout`); the last group is a `.mosaic` (one tall image, two cropped to share its height). |
 | `projects/disney-drinkware.html` | Case-study page for the Disney tile (opens in a new tab). Structure, text and images come from Julia's Notion page; the text is word for word. No link back to Notion on case-study pages (Julia's request). |
@@ -109,6 +112,8 @@ Sections slide up and fade in as they scroll into view (`data-reveal` on each `<
 - [ ] Karsten International (current employer, packaging) was dropped from the grid when Presentations took its slot. Possible project to bring back.
 - [x] Higher-resolution portrait.
 - [x] Add the live GitHub Pages URL here.
+- [x] Custom domain artemovadesign.com (September 2026).
+- [ ] Verify artemovadesign.com in GitHub account settings (Settings → Pages → Add a domain, then a TXT record at Porkbun). Optional, protects the domain from being claimed by another GitHub account if the site is ever unpublished.
 - [x] Install git, Homebrew and GitHub CLI so Claude can push updates directly.
 
 ## Contact details used on the site
