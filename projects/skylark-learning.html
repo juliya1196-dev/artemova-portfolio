@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Skylark Learning Identity System — Julia Artemova</title>
+<meta name="description" content="Case study: a new logo, wordmark, colour and pattern system for the children's educational brand Skylark Learning, by Julia Artemova." />
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,440;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #121010;
+    --paper-alt: #1B1817;
+    --card: #191614;
+    --ink: #F5EFE3;
+    --ink-soft: #C7BFAE;
+    --ink-faint: #8A8271;
+    --accent: #FF6B3D;
+    --accent-ink: #1A1108;
+    --line: rgba(245,239,227,0.14);
+    --line-strong: rgba(245,239,227,0.36);
+
+    --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+    --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+    --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  img { max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 980px; margin-inline: auto; padding-inline: clamp(18px, 5vw, 48px); }
+  p { line-height: 1.65; margin: 0; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 440; margin: 0; text-wrap: balance; }
+  .accent { color: var(--accent); font-style: italic; }
+
+  .backbar { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--line); }
+  .backlink {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em;
+    color: var(--ink-soft); text-decoration: none; padding-block: 16px;
+  }
+  .backlink:hover { color: var(--ink); }
+  .backbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  @media (max-width: 560px) { .next-short { display: none; } }
+
+  .eyebrow {
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--ink-soft);
+  }
+
+  .hero { padding-block: clamp(40px, 7vw, 72px) clamp(28px, 5vw, 40px); }
+  .hero h1 { font-size: clamp(2.4rem, 1.9rem + 3.2vw, 4rem); line-height: 1.05; margin-top: 14px; }
+  .hero-sub { margin-top: 18px; font-size: 1.1rem; color: var(--ink-soft); max-width: 56ch; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .chip {
+    font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
+    border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; color: var(--ink-soft);
+  }
+  .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 0; }
+  @media (max-width: 640px) { .facts { grid-template-columns: 1fr; gap: 16px; } }
+  .facts dt { font-family: var(--font-mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin: 0; }
+  .facts dd { margin: 5px 0 0; font-size: 0.95rem; color: var(--ink); line-height: 1.5; }
+  .hero .facts { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); }
+
+  .shot { width: 100%; height: auto; display: block; border-radius: 18px; border: 1px solid var(--line); }
+
+  .story { padding-block: clamp(44px, 7vw, 72px) clamp(32px, 5vw, 48px); }
+  .story > * + * { margin-top: clamp(48px, 7vw, 88px); }
+
+  .chapter { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 20px 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+  @media (max-width: 780px) { .chapter { grid-template-columns: 1fr; } }
+  .chapter h2 { font-size: clamp(1.5rem, 1.3rem + 0.8vw, 1.9rem); }
+  .chapter-body > * + * { margin-top: 24px; }
+  .chapter-body > p { color: var(--ink-soft); max-width: 62ch; }
+  .chapter-body > p strong { color: var(--ink); font-weight: 600; }
+
+  .embed { width: 100%; aspect-ratio: 16 / 9; display: block; border: 1px solid var(--line); border-radius: 18px; background: #000; }
+
+  .lead { font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); color: var(--ink-soft); max-width: 62ch; }
+
+  .figure { margin: 0; }
+  .figure .poem { margin: clamp(28px, 4vw, 40px) 0 0; padding-left: 20px; border-left: 2px solid var(--accent); }
+  .figure .poem p { font-family: var(--font-display); font-style: italic; font-weight: 440; font-size: clamp(1.15rem, 1rem + 0.6vw, 1.45rem); line-height: 1.5; color: var(--ink); }
+  .figure figcaption { margin-top: 12px; text-align: right; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.68rem; color: var(--ink-faint); }
+
+  /* Before / after: old mark opposite "Before", new mark opposite "After" (a zigzag, as in Notion). */
+  .before-after { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 48px; align-items: center; }
+  .before-after h3 { font-size: clamp(1.35rem, 1.2rem + 0.6vw, 1.7rem); margin-bottom: 10px; }
+  .before-after p { color: var(--ink-soft); max-width: 46ch; }
+  .logo-shot { width: 100%; height: auto; display: block; aspect-ratio: 4 / 3; object-fit: contain; background: #fff; padding: 6%; border-radius: 18px; }
+  @media (max-width: 640px) {
+    .before-after { grid-template-columns: 1fr; gap: 18px; }
+    .before-after .text-before { order: 1; }
+    .before-after .img-before { order: 2; }
+    .before-after .text-after { order: 3; margin-top: 18px; }
+    .before-after .img-after { order: 4; }
+  }
+
+  footer.site { padding-block: 22px; }
+  .foot-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
+</style>
+</head>
+<body>
+
+  <div class="backbar">
+    <div class="wrap">
+      <a class="backlink" href="../">&larr; Back to Portfolio</a>
+      <a class="backlink" href="starbucks-peanuts.html"><span>Next<span class="next-short">: Merchandise Design for Starbucks</span> &rarr;</span></a>
+    </div>
+  </div>
+
+  <header class="hero wrap">
+    <span class="eyebrow">Case Study — Brand Identity</span>
+    <h1>Skylark Learning <span class="accent">Identity System</span></h1>
+    <p class="hero-sub">A refined visual identity for a children's educational brand. The project includes a light, uplifting logo inspired by a skylark, a custom wordmark, and a signature turquoise color to create a strong, unified shelf presence. The system balances premium aesthetics with softness, reflecting the brand’s expertise and gentle approach to early learning.</p>
+    <div class="meta-row">
+      <span class="chip">Branding</span>
+      <span class="chip">Identity</span>
+      <span class="chip">Graphic design</span>
+    </div>
+    <dl class="facts">
+      <div><dt>Tools &amp; Resources</dt><dd>Adobe Illustrator, InDesign, Photoshop</dd></div>
+    </dl>
+  </header>
+
+  <div class="wrap">
+    <img class="shot" src="../project-skylark-learning.jpg" width="1920" height="900" alt="Turquoise Skylark brand book spreads and packaging laid out in a diagonal grid, with the bird mark and the Umnitsa (Умница) wordmark" />
+  </div>
+
+  <main class="story wrap">
+
+    <section class="chapter">
+      <h2>Design Objectives</h2>
+      <div class="chapter-body">
+        <p>Develop a new logo and visual identity for Skylark Learning, with a strong focus on creating a unified "color spot" to ensure brand recognition on store shelves. The main objective was to convey the brand’s premium quality, uniqueness, and expertise in children’s educational products.</p>
+      </div>
+    </section>
+
+    <figure class="figure">
+      <img class="shot" src="skylark-learning/moodboard.jpg" width="1600" height="851" loading="lazy" alt="Moodboard: a little girl running through tall summer grass with her arms open, next to a skylark in flight against a blue sky" />
+      <blockquote class="poem">
+        <p>Higher still and higher<br />From the earth thou springest<br />Like a cloud of fire;<br />The blue deep thou wingest,<br />And singing still dost soar, and soaring ever singest.</p>
+      </blockquote>
+      <figcaption>To a Skylark, by Percy Bysshe Shelley</figcaption>
+    </figure>
+
+    <section class="chapter">
+      <h2>Creative Process</h2>
+      <div class="chapter-body">
+        <p>The design process began with identifying the core values of the brand — lightness, freedom, and trust. Drawing inspiration from the company's original symbol, the skylark, I developed a graphic representation of the bird in flight, aiming to capture the feeling of upward motion and openness.</p>
+      </div>
+    </section>
+
+    <div class="before-after">
+      <img class="logo-shot img-before" src="skylark-learning/logo-before.png" width="900" height="829" loading="lazy" alt="The original Skylark Learning Cambridge logo: a round badge with a hand-drawn pink bird and the name around it" />
+      <div class="text-before">
+        <h3>Before</h3>
+        <p>The company's original symbol was a skylark, and the goal was to graphically depict a bird in flight, soaring upward. The aim was to convey a sense of flight and freedom.</p>
+      </div>
+      <div class="text-after">
+        <h3>After</h3>
+        <p>The resulting logo turned out light and fresh, and a unique "Skylark" inscription was also developed, which successfully complemented the symbol with its soft shapes.</p>
+      </div>
+      <img class="logo-shot img-after" src="skylark-learning/logo-after.png" width="1164" height="910" loading="lazy" alt="The new Skylark Cambridge logo: a turquoise skylark in flight above a soft, rounded grey wordmark" />
+    </div>
+
+    <img class="shot" src="skylark-learning/logo-construction.jpg" width="1600" height="970" loading="lazy" alt="Logo construction principles on turquoise: the bird mark and wordmark on a grid, with the compact and simplified versions" />
+
+    <p class="lead">A custom logotype "Skylark" was crafted to complement the bird mark, using soft, rounded forms that reflect the gentle and nurturing world of children. The logo construction followed precise geometric guidelines to maintain visual balance and scalability across formats.</p>
+
+    <img class="shot" src="skylark-learning/color-palette.jpg" width="1600" height="970" loading="lazy" alt="Primary colour palette: Turquoise Skylark, Smoky turquoise and Morning turquoise, with Smoky grey and white, each with CMYK, RGB, Pantone and HEX values" />
+
+    <p class="lead">The identity system was expanded with a simplified logo version for smaller applications and a custom brand pattern, designed for packaging and promotional materials. The pattern subtly incorporates elements of the logo to reinforce recognition without overpowering the main visuals.</p>
+
+    <img class="shot" src="skylark-learning/branded-pattern.jpg" width="1600" height="970" loading="lazy" alt="Branded pattern page: rows of small skylarks in light and dark turquoise, shown on a round sticker and as background panels" />
+
+    <section class="chapter">
+      <h2>Outcome</h2>
+      <div class="chapter-body">
+        <p>The final identity system features a light and fresh logo paired with a unique turquoise color, now a core brand element. This color functions as a consistent visual cue across all materials, symbolizing calmness, elegance, and the delicate nature of childhood. The cohesive system enhances brand recognition and positions Skylark Learning as a premium, expert-driven company in the educational market.</p>
+      </div>
+    </section>
+
+    <iframe class="embed" src="https://www.youtube-nocookie.com/embed/QHGDiY77kCE?rel=0" title="Umnitsa (Умница) brand video (YouTube)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <section class="chapter">
+      <h2>Credits</h2>
+      <div class="chapter-body">
+        <dl class="facts">
+          <div><dt>Company</dt><dd>Skylark Learning</dd></div>
+          <div><dt>Role</dt><dd>Creative &amp; graphic designer</dd></div>
+          <div><dt>In collaboration with</dt><dd>Marketing &amp; Development team</dd></div>
+        </dl>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site">
+    <div class="wrap foot-row">
+      <span>© 2026 Julia Artemova</span>
+      <span>Senior Creative &amp; Graphic Designer / Art&nbsp;Director — Amsterdam, NL</span>
+    </div>
+  </footer>
+
+</body>
+</html>

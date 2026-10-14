@@ -6,11 +6,13 @@ import PDFKit
 // Build: swiftc -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk tools/html2pdf.swift -o /tmp/html2pdf
 // Run (with the local server on :8000): /tmp/html2pdf http://localhost:8000/cv-print.html ~/Downloads/Julia_Artemova_CV_2026.pdf /tmp/cv-page
 // Loads the page at 595px wide, waits for fonts and images, prints how much each page overflows (all zeros = fits),
-// then prints each 595×842 .page to one A4 PDF page (text stays text, links stay clickable)
+// then prints each 595×842 .page (any number of them) to one A4 PDF page (text stays text, links stay clickable)
 // and writes PNG previews (<preview-prefix>1.png, 2.png) to check the layout.
 let a = CommandLine.arguments
 let url = URL(string: a[1])!, out = a[2], prefix = a[3]
 let W: CGFloat = 595, H: CGFloat = 842
+var pageCount = 2  // replaced by the number of .page elements once the page has loaded
+var docTitle = "Julia Artemova — CV"  // replaced by the page's <title>
 
 class D: NSObject, WKNavigationDelegate {
   func webView(_ v: WKWebView, didFinish n: WKNavigation!) {
@@ -19,7 +21,7 @@ class D: NSObject, WKNavigationDelegate {
     await document.fonts.ready;
     await Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; })));
     const pages = [...document.querySelectorAll('.page')];
-    return JSON.stringify({ count: pages.length, height: document.documentElement.scrollHeight,
+    return JSON.stringify({ count: pages.length, title: document.title, height: document.documentElement.scrollHeight,
       fonts: [...document.fonts].filter(f => f.status === 'loaded').map(f => f.family + ' ' + f.style + ' ' + f.weight),
       overflow: pages.map((p, i) => { const cols = p.querySelector('.cols'); const kids = [...p.querySelectorAll('.cols > *')];
         return { page: i + 1, pageOverflow: p.scrollHeight - p.clientHeight,
@@ -28,14 +30,17 @@ class D: NSObject, WKNavigationDelegate {
     v.callAsyncJavaScript(js, arguments: [:], in: nil, in: .page) { res in
       switch res {
       case .failure(let e): print("js error", e); exit(1)
-      case .success(let r): print(r as? String ?? "")
+      case .success(let r):
+        let json = r as? String ?? ""
+        print(json)
+        if let d = json.data(using: .utf8), let o = try? JSONSerialization.jsonObject(with: d) as? [String: Any], let c = o["count"] as? Int { pageCount = c; if let t = o["title"] as? String, !t.isEmpty { docTitle = t } }
       }
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { self.render(v, page: 0, doc: PDFDocument()) }
     }
   }
   func render(_ v: WKWebView, page: Int, doc: PDFDocument) {
-    if page == 2 {
-      doc.documentAttributes = [PDFDocumentAttribute.titleAttribute: "Julia Artemova — CV", PDFDocumentAttribute.authorAttribute: "Julia Artemova",
+    if page == pageCount {
+      doc.documentAttributes = [PDFDocumentAttribute.titleAttribute: docTitle, PDFDocumentAttribute.authorAttribute: "Julia Artemova",
                                PDFDocumentAttribute.subjectAttribute: "Senior Creative & Graphic Designer / Art Director", PDFDocumentAttribute.creatorAttribute: "artemovadesign.com"]
       doc.write(to: URL(fileURLWithPath: out))
       for i in 0..<doc.pageCount {

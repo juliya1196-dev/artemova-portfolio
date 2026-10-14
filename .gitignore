@@ -1,8 +1,9 @@
 # Local copy of index.html for the Claude preview only (see README)
 portfolio.html
 
-# Print/PDF version of the CV: carries Julia's phone number, which stays off the public site
-cv-print.html
+# Print/PDF versions of the CV (general and per-vacancy) and cover letters: carry Julia's phone number, which stays off the public site
+cv-print*.html
+cover-letter*.html
 
 # macOS
 .DS_Store
