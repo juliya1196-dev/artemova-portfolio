@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Key Visuals for Digital — Julia Artemova</title>
+<meta name="description" content="Case study: in-app banners, Instagram posts and stories, and key visuals for Dodo Pizza, by Julia Artemova." />
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,440;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* This page is light (Julia's request), like Social Media Content: white background, the site's near-black as text. */
+  :root {
+    --paper: #FFFFFF;
+    --paper-alt: #F6F3EE;
+    --card: #F6F3EE;
+    --ink: #121010;
+    --ink-soft: #4A4540;
+    --ink-faint: #7A7266;
+    --accent: #FF6B3D;
+    --accent-text: #B8390F;
+    --accent-ink: #1A1108;
+    --line: rgba(18,16,16,0.12);
+    --line-strong: rgba(18,16,16,0.32);
+
+    --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+    --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+    --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  img { max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 980px; margin-inline: auto; padding-inline: clamp(18px, 5vw, 48px); }
+  p { line-height: 1.65; margin: 0; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 440; margin: 0; text-wrap: balance; }
+  .accent { color: var(--accent); font-style: italic; }
+
+  .backbar { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--line); }
+  .backlink {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em;
+    color: var(--ink-soft); text-decoration: none; padding-block: 16px;
+  }
+  .backlink:hover { color: var(--ink); }
+  .backbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  @media (max-width: 560px) { .next-short { display: none; } }
+
+  .eyebrow {
+    font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--ink-soft);
+  }
+
+  .hero { padding-block: clamp(40px, 7vw, 72px) clamp(28px, 5vw, 40px); }
+  .hero h1 { font-size: clamp(2.4rem, 1.9rem + 3.2vw, 4rem); line-height: 1.05; margin-top: 14px; }
+  .hero-sub { margin-top: 18px; font-size: 1.1rem; color: var(--ink-soft); max-width: 56ch; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .chip {
+    font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
+    border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; color: var(--ink-soft);
+  }
+
+  .shot { width: 100%; height: auto; display: block; border-radius: 18px; }
+  /* Two images of different shapes at the same height: column widths follow each image's width/height ratio. */
+  .pair.matched { grid-template-columns: 0.942fr 0.64fr; align-items: start; }
+  .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  @media (max-width: 560px) { .pair { grid-template-columns: 1fr; } }
+
+  .story { padding-block: clamp(44px, 7vw, 72px) clamp(32px, 5vw, 48px); }
+  .story > * + * { margin-top: clamp(48px, 7vw, 88px); }
+
+  .lead { font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); color: var(--ink-soft); max-width: 62ch; }
+  .lead strong { color: var(--ink); font-weight: 600; }
+
+  .chapter { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 20px 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+  @media (max-width: 780px) { .chapter { grid-template-columns: 1fr; } }
+  .chapter h3 { font-size: clamp(1.35rem, 1.2rem + 0.6vw, 1.7rem); }
+  .chapter .num { display: block; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--accent-text); margin-bottom: 10px; }
+  .points { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .points li { position: relative; padding-left: 24px; color: var(--ink-soft); line-height: 1.6; max-width: 62ch; }
+  .points li::before { content: "—"; position: absolute; left: 0; color: var(--ink-faint); }
+  .points strong { color: var(--ink); font-weight: 600; }
+
+  footer.site { padding-block: 22px; }
+  .foot-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
+</style>
+</head>
+<body>
+
+  <div class="backbar">
+    <div class="wrap">
+      <a class="backlink" href="../">&larr; Back to Portfolio</a>
+      <a class="backlink" href="skylark-learning.html"><span>Next<span class="next-short">: Skylark Learning</span> &rarr;</span></a>
+    </div>
+  </div>
+
+  <header class="hero wrap">
+    <span class="eyebrow">Case Study — Dodo Pizza</span>
+    <h1>Key Visuals <span class="accent">for Digital</span></h1>
+    <p class="hero-sub">As a graphic designer for Dodo Pizza, I was responsible for creating a wide range of digital assets designed to engage users and support marketing initiatives across the brand’s ecosystem. This included in-app promotional banners and Instagram posts and stories. My role covered the full creative cycle — from ideation to final delivery.</p>
+    <div class="meta-row">
+      <span class="chip">Brand</span>
+      <span class="chip">Graphic design</span>
+      <span class="chip">Marketing</span>
+      <span class="chip">Retouch</span>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <img class="shot" src="key-visuals/instagram-posts-munich.jpg" width="1558" height="1080" alt="Two Instagram posts from Dodo Pizza München on phones: “Pizza Tasting München” and “Dodo Pizza Tasting”, September 7–9" />
+  </div>
+
+  <main class="story wrap">
+
+    <section class="chapter">
+      <div><span class="num">01</span><h3>Brand Analysis &amp; Visual Strategy</h3></div>
+      <ul class="points">
+        <li>Immersed myself in Dodo Pizza’s visual identity and digital tone of voice to ensure brand consistency across all assets.</li>
+        <li>Analyzed user behavior within the app and on social media to tailor visuals for maximum relevance and impact.</li>
+        <li>Developed a visual strategy for digital assets that balanced aesthetic appeal with clear communication of offers and calls to action.</li>
+      </ul>
+    </section>
+
+    <img class="shot" src="key-visuals/website-combo-banner.jpg" width="1600" height="900" loading="lazy" alt="Dodo Pizza website with an orange hero banner: a combo of two pizzas and Coca-Cola Orange, up to 13% off" />
+
+    <section class="chapter">
+      <div><span class="num">02</span><h3>Concept Development &amp; Design</h3></div>
+      <ul class="points">
+        <li>Designed static and animated <strong>in-app banners</strong> promoting seasonal offers, product launches, and limited-time deals.</li>
+        <li>Created branded templates and layouts for <strong>Instagram stories</strong>, ensuring content was instantly recognizable and aligned with Dodo Pizza’s tone — playful, bold, and friendly.</li>
+        <li>Developed a series of <strong>modular post designs</strong> for social media that could be quickly adapted to different campaigns and formats.</li>
+      </ul>
+    </section>
+
+    <div class="pair">
+      <img class="shot" src="key-visuals/instagram-story-combo.jpg" width="1080" height="1395" loading="lazy" alt="Instagram story on a phone: the purple “Kennenlern-Combo” offer, one of 16 pizzas, a snack and a drink for 10,90 €" />
+      <img class="shot" src="key-visuals/app-banner-combo.jpg" width="1080" height="1395" loading="lazy" alt="The Dodo Pizza app in Munich on a phone, with the same Kennenlern-Combo banner above the pizza menu" />
+    </div>
+
+    <section class="chapter">
+      <div><span class="num">03</span><h3>Content Optimization by Platform</h3></div>
+      <ul class="points">
+        <li>Adapted visuals for multiple screen sizes and platforms, considering user interaction patterns in mobile-first environments.</li>
+        <li>Designed Instagram stories and posts with high attention to hierarchy, color, and movement to encourage engagement.</li>
+        <li>Ensured that <strong>in-app banners</strong> were not only visually appealing but also optimized for fast loading and effective click-through rates.</li>
+      </ul>
+    </section>
+
+    <img class="shot" src="key-visuals/instagram-stories.jpg" width="1600" height="1087" loading="lazy" alt="Seven Instagram stories: Spiced Cherry Punch, Kennenlern-Combo, “Hallo Haidhausen!” opening, Pumpkin Spice Latte, a lemonade, Tuna Pizza and “Meškutis”" />
+
+    <section class="chapter">
+      <div><span class="num">04</span><h3>Collaboration &amp; Delivery</h3></div>
+      <ul class="points">
+        <li>Worked closely with product and marketing teams to align visual content with ongoing promotions and campaign timelines.</li>
+        <li>Delivered assets in a variety of formats and resolutions, following technical specifications for mobile apps and social media platforms.</li>
+        <li>Iterated on designs based on performance analytics and A/B test results, contributing to data-driven visual improvements.</li>
+      </ul>
+    </section>
+
+    <div class="pair matched">
+      <img class="shot" src="key-visuals/bus-stop-spiced-cherry-punch.jpg" width="1256" height="1333" loading="lazy" alt="Bus stop poster for the limited-offer Spiced Cherry Punch, 5 €" />
+      <img class="shot" src="key-visuals/street-poster-pumpkin-spice-latte.jpg" width="1100" height="1718" loading="lazy" alt="Street poster for the limited-offer Pumpkin Spice Latte, 5 €, under a tree in the evening" />
+    </div>
+
+    <section class="chapter">
+      <div><span class="num">05</span><h3>Results &amp; Impact</h3></div>
+      <p class="lead">This project strengthened Dodo Pizza’s visual communication across digital touchpoints. The assets contributed to increased user interaction in the app, higher engagement on social media, and strong brand consistency across platforms — all while keeping the design fresh, fun, and unmistakably Dodo.</p>
+    </section>
+
+    <img class="shot" src="key-visuals/russia-app-and-social-banners.jpg" width="1600" height="1087" loading="lazy" alt="Nine Russian-language Dodo Pizza banners: lemonades, cocktails, two-for-one pizza, fresh orange juice, Baba-Gum lemonade, kids’ puzzles, giveaways and a combo deal" />
+
+  </main>
+
+  <footer class="site">
+    <div class="wrap foot-row">
+      <span>© 2026 Julia Artemova</span>
+      <span>Senior Creative &amp; Graphic Designer / Art&nbsp;Director — Amsterdam, NL</span>
+    </div>
+  </footer>
+
+</body>
+</html>

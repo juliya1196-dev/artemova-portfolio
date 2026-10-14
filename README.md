@@ -40,6 +40,8 @@ This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, lo
 | `projects/social-media-content/` | 8 images and 2 videos for that page. The videos were Facebook and Twitter embeds in Notion (both posted by Dodo Pizza Leamington); Julia chose to host copies instead of embedding the players. "Meet our pizza heroes" (Facebook) exists in HD only as VP9, so the page offers `pizza-heroes-1080-vp9.mp4` first and falls back to the 426×426 H.264 `pizza-heroes-426.mp4` for browsers without VP9 (checked with the `type` codecs string); the poster is Facebook's 1080 thumbnail. `app-launch.mp4` is the tweet's 720×720 H.264 video, with a first-frame poster. Both show controls, load nothing until played, and have sound. |
 | `projects/skylark-learning.html` | Case-study page for the Skylark Learning tile (opens in a new tab). Built from Julia's Notion page (https://artemovadesign.notion.site/Skylark-Learning-Identity-System-228c11c95490800c9d1ae992de104c84) like the others: text word for word, images in Notion's order. Includes the five lines from Shelley's "To a Skylark" that Notion shows as a quote under the moodboard (with the attribution right-aligned), a Before / After block laid out as a zigzag like Notion (old badge opposite "Before", new logo opposite "After"; on phones: Before, old logo, After, new logo; both logos on white panels), and Notion's YouTube video (the Russian "Умница" brand video, embedded via youtube-nocookie). Notion's last image, a small bird mark on a white strip, is left out (Julia's request). Credits as on the Dodo page. |
 | `projects/skylark-learning/` | 6 images for that page: moodboard, old and new logos (PNG), logo construction, colour palette and branded pattern. Cover is `project-skylark-learning.jpg` (Notion's first image, the turquoise brand-book collage). |
+| `projects/key-visuals.html` | Case-study page for the Key Visuals for Digital tile (opens in a new tab). Built from Julia's Notion page (https://artemovadesign.notion.site/Key-Visuals-for-Digital-97dadb7369d749bcb00093740e290811): text and bold words word for word, images in Notion's order, five numbered steps in the 01–05 style. **Light page** like Social Media Content (Julia's request): same `:root` colours, borderless images. The bus-stop and street-poster pair (`.pair.matched`) uses column widths in the images' width/height ratio so both stand at the same height uncropped. Notion's "Tools & Resources" is empty, so there's no facts row. |
+| `projects/key-visuals/` | 8 images for that page (two Dodo Pizza München Instagram posts on phones, which head the page, then website banner, Instagram story and app banner, stories grid, bus stop and street posters, Russian app/social banners). The tile cover is separate, `project-key-visuals.jpg`. |
 | `cat.html` | The "reward" page linked from the very bottom of the home page: "Thanks for making it till the end" / "Here is your *reward*" and a photo of Julia's cat Flinn (`cat-flinn.webp`) with the caption "My cat Flinn :-)" in italic Fraunces. |
 | `cat-flinn.webp` | Photo of Flinn, a grey Maine Coon (1086×1448, as Julia sent it in chat). |
 | `tools/gif2mp4.swift` | Converts a GIF to an H.264 MP4 plus a poster JPEG with Apple's built-in frameworks (no ffmpeg needed). Build: `swiftc -O -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk tools/gif2mp4.swift -o /tmp/gif2mp4` (the newest SDK doesn't match this Mac's Swift compiler). Run: `/tmp/gif2mp4 in.gif out.mp4 2500000 poster.jpg`. |
@@ -58,11 +60,12 @@ This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, lo
 | `project-dodo-pizza-uk.jpg` | Cover: Dodo Pizza UK |
 | `project-presentations.webp` | Cover: Presentation & Pitch Decks |
 | `project-social-media-content.jpg` | Cover: Social Media Content (the #DODOPIZZAUK slices close-up from the Notion page; Notion's first image, the Christmas Party Deal banner, is too wide and text-heavy to crop into a tile, so it heads the case page instead). Also used in the page's last image pair. |
+| `project-key-visuals.jpg` | Cover: Key Visuals for Digital — the Spiced Cherry Punch bus-stop poster (1256×1333, Julia sent it in chat). Shown with `background-position: center 88%` so the poster's own headline sits above the tile title. Notion's first image (phones with big "PIZZA TASTING" lettering) was tried first but clashed with the title. |
 | `project-skylark-learning.jpg` | Cover: Skylark Learning (turquoise brand-book spreads, 1920×900) |
 | `project-catalogue-shooting.webp` | Cover: Visual for Combo Deals (three pizzas on orange, 2000×1447; Julia sent it in chat, it isn't on the Notion page) |
 | `portfolio.html` | Copy of `index.html` for the Claude preview only. Local file, listed in `.gitignore` so it never goes to GitHub. |
 
-**Moving between case studies.** Each case-study page has a "Next: …" link on the right of the sticky top bar (just "Next" on phones). It opens in the same tab. The order follows the home grid and loops: Merchandise Design for Starbucks → Disney → Dodo Pizza UK → Presentations → Visual for Combo Deals → Social Media Content → Skylark Learning → back to Starbucks (BBDO has no page yet, so the loop skips it). When a new case study is added, point the previous last page's link to it, and point the new page's link back to Starbucks. (A big "Next Project" cover tile at the bottom was tried and removed at Julia's request: next-project navigation lives in the top bar only.)
+**Moving between case studies.** Each case-study page has a "Next: …" link on the right of the sticky top bar (just "Next" on phones). It opens in the same tab. The order follows the home grid and loops: Merchandise Design for Starbucks → Disney → Dodo Pizza UK → Presentations → Visual for Combo Deals → Social Media Content → Key Visuals for Digital → Skylark Learning → back to Starbucks. When a new case study is added, point the previous last page's link to it, and point the new page's link back to Starbucks. (A big "Next Project" cover tile at the bottom was tried and removed at Julia's request: next-project navigation lives in the top bar only.)
 
 **Case-study footer** is the same as the home page footer: "© 2026 Julia Artemova" on the left, "Senior Creative & Graphic Designer / Art Director — Amsterdam, NL" on the right, no divider line, at the very bottom of the page.
 
@@ -82,7 +85,7 @@ This Mac has Apple's Command Line Tools (git), Homebrew and GitHub CLI (`gh`, lo
    4. Presentation & Pitch Decks Design (Corporate Communications). Links to its case-study page.
    5. Visual for Combo Deals (Art Direction). Links to its case-study page (`projects/catalogue-shooting.html`; the page itself keeps Notion's title, "Catalogue shooting").
    6. Social Media Content (Marketing). Links to its case-study page.
-   7. BBDO (Automotive Campaign). Placeholder, no cover yet.
+   7. Key Visuals for Digital (Digital Marketing). Links to its case-study page.
    8. Skylark Learning (Brand Identity). Links to its case-study page (`projects/skylark-learning.html`). Until October 2026 it was a placeholder labelled "Digital Product Design".
 5. **Contact** (`#contact`): just two large underlined text links in the heading font, the email and "LinkedIn ↗". They turn orange on hover. No heading, no buttons.
 6. **Footer**: © 2026 line, and under it a small link in the same mono style and colour, "Thanks for making it till the end, here is your reward →", which opens `cat.html` in a new tab (a hidden reward: a photo of Julia's cat).
@@ -91,7 +94,7 @@ Sections slide up and fade in as they scroll into view (`data-reveal` on each `<
 
 ## Design system
 
-- **Dark theme** (one exception: `projects/social-media-content.html` is light): near-black background `#121010`, warm off-white text `#F5EFE3`, accent orange `#FF6B3D`. The logo orange is `#ff4b27`. All colors are CSS variables at the top of `index.html`.
+- **Dark theme** (exceptions: `projects/social-media-content.html` and `projects/key-visuals.html` are light): near-black background `#121010`, warm off-white text `#F5EFE3`, accent orange `#FF6B3D`. The logo orange is `#ff4b27`. All colors are CSS variables at the top of `index.html`.
 - **Fonts** (Google Fonts): Fraunces (headings), JetBrains Mono (labels, nav), Archivo (body text).
 - **Case-study spacing**: every block on a case-study page (text chapter, image, image pair, group of slides) is the same distance from the next one, `clamp(48px, 7vw, 88px)`, set by `.story > * + *`. Images inside one group sit 18px apart. A big section heading sits closer to what follows it (`clamp(28px, 4vw, 40px)`). Don't give a block its own `margin: 0`: it cancels that spacing (this was the bug on the Presentations page, where every `<figure>` stuck to the text above it).
 - **Dock**: white background with dark text; the CV link is dark orange `#B8390F` for contrast.
@@ -111,7 +114,7 @@ Sections slide up and fade in as they scroll into view (`data-reveal` on each `<
 - [x] Showreel video for the hero.
 - [x] Sharper showreel (1920×1080).
 - [ ] Lighter showreel. `showreel.mp4` is 15.4 MB because macOS's built-in encoder can't go smaller at 1080p. ffmpeg (`brew install ffmpeg`, Julia said no for now) would get it to about 3–5 MB: `ffmpeg -i "Comp 3.mp4" -c:v libx264 -crf 24 -preset slow -pix_fmt yuv420p -movflags +faststart -an showreel.mp4`.
-- [ ] Cover and case study for BBDO (Skylark Learning done in October 2026).
+- [ ] BBDO (automotive campaign, 2020–2021): the placeholder tile was removed in October 2026 so the grid stays even (8 tiles). Bring it back as a real tile once there's a cover and a case study.
 - [x] Photo of Julia's cat for `cat.html`.
 - [x] Case-study page for Disney (from https://artemovadesign.notion.site/drinkware-design-for-disney).
 - [x] Case-study page for Dodo Pizza UK (from https://artemovadesign.notion.site/Menu-in-store-design-21cc11c9549080b9bd7aff9dcd459826).
